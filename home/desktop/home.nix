@@ -10,6 +10,7 @@
     ../../modules/home-manager/system/flatpak.nix
     ../../modules/home-manager/system/ghostty.nix
     ../../modules/home-manager/system/gnome.nix
+    ../../modules/home-manager/system/scrcpy.nix
     ../../modules/home-manager/system/zsh.nix
   ];
 
