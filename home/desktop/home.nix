@@ -5,6 +5,7 @@
     ../../modules/home-manager/flatpak/firefox.nix
     ../../modules/home-manager/flatpak/flameshot.nix
     ../../modules/home-manager/flatpak/gpu-screen-recorder.nix
+    ../../modules/home-manager/flatpak/sober.nix
     ../../modules/home-manager/flatpak/steam.nix
     ../../modules/home-manager/system/flatpak.nix
     ../../modules/home-manager/system/ghostty.nix
@@ -41,7 +42,6 @@
     "com.vysp3r.ProtonPlus"
 
     # Gaming
-    "org.vinegarhq.Sober"
     "org.prismlauncher.PrismLauncher"
     "sh.ppy.osu"
 
