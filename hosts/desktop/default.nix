@@ -1,13 +1,14 @@
-{ pkgs, ... }: {
+{ self, user, pkgs, ... }: {
   imports = [
-    ./hardware-configuration.nix
-    ./mount-configuration.nix
-    ../../modules/nixos/default.nix
-    ../../modules/nixos/flatpak/gpu-screen-recorder.nix
-    ../../modules/nixos/system/docker.nix
-    ../../modules/nixos/system/flatpak.nix
-    ../../modules/nixos/system/gnome.nix
-    ../../modules/nixos/system/podman.nix
+    ./hardware.nix
+    ./mount.nix
+
+    (self + /modules/nixos/default.nix)
+    (self + /modules/nixos/flatpak/gpu-screen-recorder.nix)
+    (self + /modules/nixos/system/docker.nix)
+    (self + /modules/nixos/system/flatpak.nix)
+    (self + /modules/nixos/system/gnome.nix)
+    (self + /modules/nixos/system/podman.nix)
   ];
 
   system.stateVersion = "26.05";
@@ -44,9 +45,9 @@
   };
 
   # Users
-  users.users.nayetdet = {
+  users.users.${user.name} = {
     isNormalUser = true;
-    description = "João Pedro Moreira";
+    description = "${user.description}";
     extraGroups = [
       "adbusers"
       "docker"

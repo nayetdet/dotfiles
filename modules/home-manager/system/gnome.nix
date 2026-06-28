@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ self, profile, pkgs, ... }: {
   home.packages = (with pkgs; [
     papirus-icon-theme
   ]) ++ (with pkgs.gnomeExtensions; [
@@ -17,13 +17,13 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///etc/nixos/assets/wallpaper.png";
-      picture-uri-dark = "file:///etc/nixos/assets/wallpaper.png";
+      picture-uri = "file://${self}/assets/wallpapers/${profile}.png";
+      picture-uri-dark = "file://${self}/assets/wallpapers/${profile}.png";
       picture-options = "zoom";
     };
 
     "org/gnome/desktop/screensaver" = {
-      picture-uri = "file:///etc/nixos/assets/wallpaper.png";
+      picture-uri = "file://${self}/assets/wallpapers/${profile}.png";
       picture-options = "zoom";
     };
 

@@ -1,21 +1,21 @@
-{ pkgs, ... }: {
+{ self, user, pkgs, ... }: {
   imports = [
-    ../../modules/home-manager/default.nix
-    ../../modules/home-manager/flatpak/discord.nix
-    ../../modules/home-manager/flatpak/firefox.nix
-    ../../modules/home-manager/flatpak/flameshot.nix
-    ../../modules/home-manager/flatpak/gpu-screen-recorder.nix
-    ../../modules/home-manager/flatpak/sober.nix
-    ../../modules/home-manager/flatpak/steam.nix
-    ../../modules/home-manager/system/flatpak.nix
-    ../../modules/home-manager/system/ghostty.nix
-    ../../modules/home-manager/system/gnome.nix
-    ../../modules/home-manager/system/scrcpy.nix
-    ../../modules/home-manager/system/zsh.nix
+    (self + /modules/home-manager/default.nix)
+    (self + /modules/home-manager/flatpak/discord.nix)
+    (self + /modules/home-manager/flatpak/firefox.nix)
+    (self + /modules/home-manager/flatpak/flameshot.nix)
+    (self + /modules/home-manager/flatpak/gpu-screen-recorder.nix)
+    (self + /modules/home-manager/flatpak/sober.nix)
+    (self + /modules/home-manager/flatpak/steam.nix)
+    (self + /modules/home-manager/system/flatpak.nix)
+    (self + /modules/home-manager/system/ghostty.nix)
+    (self + /modules/home-manager/system/gnome.nix)
+    (self + /modules/home-manager/system/scrcpy.nix)
+    (self + /modules/home-manager/system/zsh.nix)
   ];
 
-  home.username = "nayetdet";
-  home.homeDirectory = "/home/nayetdet";
+  home.username = "${user.name}";
+  home.homeDirectory = "/home/${user.name}";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
     # Development

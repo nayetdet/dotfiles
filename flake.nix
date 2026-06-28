@@ -10,23 +10,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  let
+    mkNixosConfiguration = profile: user: nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit self inputs profile user; };
+      modules = [
+        (self + /hosts/${profile}/default.nix)
+        home-manager.nixosModules.home-manager {
+          home-manager = {
+            useUserPackages = true;
+            extraSpecialArgs = { inherit self inputs profile user; };
+            users.${user.name} = import (self + /home/${profile}/default.nix);
+            backupFileExtension = "backup";
+          };
+        }
+      ];
+    };
+  in {
     nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/desktop/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.nayetdet = import ./home/desktop/home.nix;
-              backupFileExtension = "backup";
-            };
-          }
-        ];
+      desktop = mkNixosConfiguration "desktop" {
+        name = "nayetdet";
+        description = "João Pedro Moreira";
       };
     };
   };
