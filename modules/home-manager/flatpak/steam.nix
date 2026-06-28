@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   services.flatpak.packages = [
     "com.valvesoftware.Steam"
   ];
@@ -13,7 +13,7 @@
     [Desktop Entry]
     Type=Application
     Name=Steam
-    Exec=flatpak run com.valvesoftware.Steam -silent
+    Exec=flatpak run com.valvesoftware.Steam
     X-GNOME-Autostart-enabled=true
   '';
 }

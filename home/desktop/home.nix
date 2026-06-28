@@ -4,6 +4,7 @@
     ../../modules/home-manager/flatpak/discord.nix
     ../../modules/home-manager/flatpak/firefox.nix
     ../../modules/home-manager/flatpak/flameshot.nix
+    ../../modules/home-manager/flatpak/gpu-screen-recorder.nix
     ../../modules/home-manager/flatpak/steam.nix
     ../../modules/home-manager/system/flatpak.nix
     ../../modules/home-manager/system/ghostty.nix
@@ -59,7 +60,6 @@
     "info.febvre.Komikku"
 
     # Recording & Streaming
-    "com.dec05eba.gpu_screen_recorder"
     "com.obsproject.Studio"
 
     # Security

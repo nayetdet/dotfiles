@@ -3,9 +3,11 @@
     ./hardware-configuration.nix
     ./mount-configuration.nix
     ../../modules/nixos/default.nix
-    ../../modules/nixos/docker.nix
-    ../../modules/nixos/gnome.nix
-    ../../modules/nixos/podman.nix
+    ../../modules/nixos/flatpak/gpu-screen-recorder.nix
+    ../../modules/nixos/system/docker.nix
+    ../../modules/nixos/system/flatpak.nix
+    ../../modules/nixos/system/gnome.nix
+    ../../modules/nixos/system/podman.nix
   ];
 
   system.stateVersion = "26.05";
@@ -66,7 +68,4 @@
       runroot = "/run/containers/storage";
     };
   };
-
-  # Services
-  services.flatpak.enable = true;
 }
