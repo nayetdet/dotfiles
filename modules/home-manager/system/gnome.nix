@@ -39,12 +39,12 @@
       clock-show-weekdate = true;
     };
 
-    "org/gnome/desktop/shell/keybindings" = {
-      toggle-message-tray = [];
-    };
-
     "org/gnome/desktop/wm/keybindings" = {
       show-desktop = [ "<Super>d" ];
+    };
+
+    "org/gnome/shell/keybindings" = {
+      toggle-message-tray = [];
     };
 
     "org/gnome/desktop/wm/preferences" = {
