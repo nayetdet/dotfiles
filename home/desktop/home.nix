@@ -38,6 +38,7 @@
     # Downloading
     "org.nickvision.tubeconverter"
     "org.qbittorrent.qBittorrent"
+    "com.vysp3r.ProtonPlus"
 
     # Gaming
     "org.vinegarhq.Sober"
