@@ -19,6 +19,7 @@
     vscode
 
     # GNOME Core Apps
+    nautilus
     gnome-disk-utility
     gnome-system-monitor
   ];

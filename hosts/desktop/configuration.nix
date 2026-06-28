@@ -5,7 +5,6 @@
     ../../modules/nixos/default.nix
     ../../modules/nixos/docker.nix
     ../../modules/nixos/gnome.nix
-    ../../modules/nixos/nautilus.nix
     ../../modules/nixos/podman.nix
   ];
 
