@@ -16,7 +16,7 @@
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
     # Development
-    vscodium
+    vscode
 
     # GNOME Core Apps
     gnome-disk-utility

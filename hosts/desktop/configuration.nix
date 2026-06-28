@@ -3,8 +3,10 @@
     ./hardware-configuration.nix
     ./mount-configuration.nix
     ../../modules/nixos/default.nix
+    ../../modules/nixos/docker.nix
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/nautilus.nix
+    ../../modules/nixos/podman.nix
   ];
 
   system.stateVersion = "26.05";
@@ -45,9 +47,25 @@
     isNormalUser = true;
     description = "João Pedro Moreira";
     extraGroups = [
+      "docker"
       "networkmanager"
       "wheel"
     ];
+  };
+
+  # Virtualisation
+  virtualisation = {
+    docker = {
+      daemon.settings = {
+        data-root = "/run/media/HDD/.docker";
+      };
+    };
+
+    containers.storage.settings = {
+      driver = "overlay";
+      graphroot = "/run/media/HDD/.podman";
+      runroot = "/run/containers/storage";
+    };
   };
 
   # Services
