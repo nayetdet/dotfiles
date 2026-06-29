@@ -19,7 +19,12 @@
   home.homeDirectory = "/home/${user.name}";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
-    # Development
+    # Containers & Virtualisation
+    distrobox
+    kind
+    kubectl
+
+    # Development Tools
     vscode
 
     # GNOME Core Apps
@@ -32,19 +37,22 @@
     # Browsers
     "com.brave.Browser"
 
-    # Development
-    "io.dbeaver.DBeaverCommunity"
+    # Containers & Virtualisation
+    "com.ranfdev.DistroShelf"
+
+    # Development Tools
     "com.getpostman.Postman"
     "com.mongodb.Compass"
     "com.redis.RedisInsight"
+    "io.dbeaver.DBeaverCommunity"
+
+    # Documents
+    "org.libreoffice.LibreOffice"
 
     # Downloading
+    "com.vysp3r.ProtonPlus"
     "org.nickvision.tubeconverter"
     "org.qbittorrent.qBittorrent"
-    "com.vysp3r.ProtonPlus"
-
-    # Libre Office
-    "org.libreoffice.LibreOffice"
 
     # Gaming
     "com.parsecgaming.parsec"
@@ -61,7 +69,7 @@
     "org.gnome.TextEditor"
     "org.gnome.Totem"
 
-    # Media
+    # Media & Entertainment
     "com.spotify.Client"
     "com.stremio.Stremio"
     "info.febvre.Komikku"
@@ -72,7 +80,7 @@
     # Security
     "com.bitwarden.desktop"
 
-    # Utils
+    # Utilities
     "com.belmoussaoui.Decoder"
   ];
 }

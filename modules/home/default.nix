@@ -3,6 +3,7 @@
     fastfetch
     file
     ffmpeg
+    fzf
     git
     jq
     tmux
