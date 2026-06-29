@@ -10,7 +10,6 @@
     (self + /modules/home-manager/system/flatpak.nix)
     (self + /modules/home-manager/system/ghostty.nix)
     (self + /modules/home-manager/system/gnome.nix)
-    (self + /modules/home-manager/system/scrcpy.nix)
     (self + /modules/home-manager/system/zsh.nix)
   ];
 

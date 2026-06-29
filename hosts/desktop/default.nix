@@ -9,6 +9,7 @@
     (self + /modules/nixos/system/flatpak.nix)
     (self + /modules/nixos/system/gnome.nix)
     (self + /modules/nixos/system/podman.nix)
+    (self + /modules/nixos/system/scrcpy.nix)
   ];
 
   system.stateVersion = "26.05";
@@ -49,8 +50,6 @@
     isNormalUser = true;
     description = "${user.description}";
     extraGroups = [
-      "adbusers"
-      "docker"
       "networkmanager"
       "wheel"
     ];
