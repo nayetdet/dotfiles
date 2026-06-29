@@ -106,7 +106,7 @@
     "org/gnome/shell/extensions/quick-settings-audio-panel" = {
       create-mpris-controllers = false;
       create-profile-switcher = true;
-      group-applications-volume-slider = true;
+      group-applications-volume-sliders = true;
       move-input-volume-slider = false;
       move-output-volume-slider = false;
       mpris-controlers-are-moved = false;
