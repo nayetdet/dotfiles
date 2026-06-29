@@ -42,6 +42,9 @@
     "org.qbittorrent.qBittorrent"
     "com.vysp3r.ProtonPlus"
 
+    # Libre Office
+    "org.libreoffice.LibreOffice"
+
     # Gaming
     "com.parsecgaming.parsec"
     "org.prismlauncher.PrismLauncher"
