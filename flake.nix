@@ -12,8 +12,10 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
     mkNixosConfiguration = profile: user: nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system;
       specialArgs = { inherit self inputs profile user; };
       modules = [
         (self + /hosts/${profile}/default.nix)
@@ -33,6 +35,10 @@
         name = "nayetdet";
         description = "João Pedro Moreira";
       };
+    };
+
+    devShells.${system} = {
+      agents = import (self + /shells/agents.nix) { inherit pkgs; };
     };
   };
 }
