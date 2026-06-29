@@ -13,6 +13,7 @@
     (self + /modules/nixos/system/podman.nix)
     (self + /modules/nixos/system/scrcpy.nix)
     (self + /modules/nixos/system/ssh.nix)
+    (self + /modules/nixos/system/tailscale.nix)
   ];
 
   # Release compatibility
