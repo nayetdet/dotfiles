@@ -12,6 +12,9 @@
   services.xserver.xkb.variant = "abnt2";
   time.timeZone = "America/Fortaleza";
 
+  # Networking
+  networking.firewall.enable = true;
+
   # Users
   users.defaultUserShell = pkgs.zsh;
 

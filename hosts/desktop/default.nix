@@ -11,8 +11,10 @@
     (self + /modules/nixos/system/gnome.nix)
     (self + /modules/nixos/system/podman.nix)
     (self + /modules/nixos/system/scrcpy.nix)
+    (self + /modules/nixos/system/ssh.nix)
   ];
 
+  # Release compatibility
   system.stateVersion = "26.05";
 
   # Bootloader and Kernel
