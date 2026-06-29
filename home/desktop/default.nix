@@ -43,6 +43,7 @@
     "com.vysp3r.ProtonPlus"
 
     # Gaming
+    "com.parsecgaming.parsec"
     "org.prismlauncher.PrismLauncher"
     "sh.ppy.osu"
 
