@@ -7,6 +7,7 @@
     (self + /modules/home-manager/flatpak/gpu-screen-recorder.nix)
     (self + /modules/home-manager/flatpak/sober.nix)
     (self + /modules/home-manager/flatpak/steam.nix)
+    (self + /modules/home-manager/system/corectrl.nix)
     (self + /modules/home-manager/system/flatpak.nix)
     (self + /modules/home-manager/system/ghostty.nix)
     (self + /modules/home-manager/system/gnome.nix)
