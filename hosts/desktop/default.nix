@@ -5,6 +5,7 @@
 
     (self + /modules/nixos/default.nix)
     (self + /modules/nixos/flatpak/gpu-screen-recorder.nix)
+    (self + /modules/nixos/system/cups.nix)
     (self + /modules/nixos/system/docker.nix)
     (self + /modules/nixos/system/flatpak.nix)
     (self + /modules/nixos/system/gnome.nix)
