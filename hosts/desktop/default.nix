@@ -8,6 +8,7 @@
     (self + /modules/nixos/system/corectrl.nix)
     (self + /modules/nixos/system/cups.nix)
     (self + /modules/nixos/system/docker.nix)
+    (self + /modules/nixos/system/fail2ban.nix)
     (self + /modules/nixos/system/flatpak.nix)
     (self + /modules/nixos/system/gnome.nix)
     (self + /modules/nixos/system/podman.nix)
