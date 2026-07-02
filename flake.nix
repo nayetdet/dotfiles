@@ -35,6 +35,11 @@
         name = "nayetdet";
         description = "João Pedro Moreira";
       };
+
+      laptop = mkNixosConfiguration "laptop" {
+        name = "nayetdet";
+        description = "João Pedro Moreira";
+      };
     };
 
     devShells.${system} = {

@@ -5,8 +5,6 @@
 
     (self + /modules/nix/default.nix)
     (self + /modules/nix/flatpak/gpu-screen-recorder.nix)
-    (self + /modules/nix/system/corectrl.nix)
-    (self + /modules/nix/system/cups.nix)
     (self + /modules/nix/system/docker.nix)
     (self + /modules/nix/system/fail2ban.nix)
     (self + /modules/nix/system/flatpak.nix)
@@ -26,30 +24,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking
-  networking = {
-    hostName = "nixos";
-    networkmanager = {
-      enable = true;
-      ensureProfiles.profiles.static-profile = {
-        connection = {
-          id = "Wired connection 1";
-          type = "ethernet";
-          interface-name = "enp7s0"; 
-        };
-
-        ipv4 = {
-          method = "manual";
-          address1 = "192.168.18.100/24";
-          gateway = "192.168.18.1";
-          dns = "1.1.1.1;1.0.0.1;";
-        };
-
-        ipv6 = {
-          method = "disabled";
-        };
-      };
-    };
-  };
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   # Users
   users.users.${user.name} = {
@@ -59,20 +35,5 @@
       "networkmanager"
       "wheel"
     ];
-  };
-
-  # Virtualisation
-  virtualisation = {
-    docker.daemon.settings = {
-      data-root = "/run/media/HDD/.docker";
-    };
-
-    containers.storage.settings = {
-      storage = {
-        driver = "overlay";
-        graphroot = "/run/media/HDD/.podman";
-        runroot = "/run/containers/storage";
-      };
-    };
   };
 }

@@ -1,0 +1,85 @@
+{ self, user, pkgs, ... }: {
+  imports = [
+    (self + /modules/home/default.nix)
+    (self + /modules/home/flatpak/discord.nix)
+    (self + /modules/home/flatpak/firefox.nix)
+    (self + /modules/home/flatpak/flameshot.nix)
+    (self + /modules/home/flatpak/gpu-screen-recorder.nix)
+    (self + /modules/home/flatpak/sober.nix)
+    (self + /modules/home/flatpak/steam.nix)
+    (self + /modules/home/system/direnv.nix)
+    (self + /modules/home/system/flatpak.nix)
+    (self + /modules/home/system/ghostty.nix)
+    (self + /modules/home/system/gnome.nix)
+    (self + /modules/home/system/zsh.nix)
+  ];
+
+  home.username = "${user.name}";
+  home.homeDirectory = "/home/${user.name}";
+  home.stateVersion = "26.05";
+  home.packages = with pkgs; [
+    # Containers & Virtualisation
+    distrobox
+    kind
+    kubectl
+
+    # Development Tools
+    vscode
+
+    # GNOME Core Apps
+    nautilus
+    gnome-disk-utility
+    gnome-system-monitor
+  ];
+
+  services.flatpak.packages = [
+    # Browsers
+    "com.brave.Browser"
+
+    # Containers & Virtualisation
+    "com.ranfdev.DistroShelf"
+
+    # Development Tools
+    "com.getpostman.Postman"
+    "com.mongodb.Compass"
+    "com.redis.RedisInsight"
+    "io.dbeaver.DBeaverCommunity"
+
+    # Documents
+    "org.libreoffice.LibreOffice"
+
+    # Downloading
+    "com.vysp3r.ProtonPlus"
+    "org.nickvision.tubeconverter"
+    "org.qbittorrent.qBittorrent"
+
+    # Gaming
+    "com.parsecgaming.parsec"
+    "org.prismlauncher.PrismLauncher"
+    "sh.ppy.osu"
+
+    # GNOME Core Apps
+    "org.gnome.baobab"
+    "org.gnome.Calculator"
+    "org.gnome.Evince"
+    "org.gnome.Loupe"
+    "org.gnome.Music"
+    "org.gnome.SimpleScan"
+    "org.gnome.TextEditor"
+    "org.gnome.Totem"
+
+    # Media & Entertainment
+    "com.spotify.Client"
+    "com.stremio.Stremio"
+    "info.febvre.Komikku"
+
+    # Recording & Streaming
+    "com.obsproject.Studio"
+
+    # Security
+    "com.bitwarden.desktop"
+
+    # Utilities
+    "com.belmoussaoui.Decoder"
+  ];
+}
