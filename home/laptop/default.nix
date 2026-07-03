@@ -11,6 +11,7 @@
     (self + /modules/home/system/flatpak.nix)
     (self + /modules/home/system/ghostty.nix)
     (self + /modules/home/system/gnome.nix)
+    (self + /modules/home/system/papirus.nix)
     (self + /modules/home/system/zsh.nix)
   ];
 

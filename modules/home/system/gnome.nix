@@ -1,7 +1,5 @@
-{ self, profile, pkgs, ... }: {
-  home.packages = (with pkgs; [
-    papirus-icon-theme
-  ]) ++ (with pkgs.gnomeExtensions; [
+{ self, profile, theme, pkgs, ... }: {
+  home.packages = with pkgs.gnomeExtensions; [
     appindicator
     blur-my-shell
     color-picker
@@ -13,7 +11,7 @@
     lock-keys-2
     quick-settings-audio-panel
     status-area-horizontal-spacing
-  ]);
+  ];
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
@@ -28,8 +26,9 @@
     };
 
     "org/gnome/desktop/interface" = {
+      accent-color = theme.color;
       color-scheme = "prefer-dark";
-      icon-theme = "Papirus-Dark";
+      icon-theme = theme.iconTheme;
       enable-hot-corners = false;
 
       clock-format = "24h";
@@ -102,7 +101,7 @@
     "org/gnome/shell/extensions/freespace" = {
       indicator-display-mode = "icon";
     };
-      
+
     "org/gnome/shell/extensions/quick-settings-audio-panel" = {
       create-mpris-controllers = false;
       create-profile-switcher = true;

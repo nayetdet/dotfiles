@@ -14,15 +14,15 @@
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
-    mkNixosConfiguration = profile: user: nixpkgs.lib.nixosSystem {
+    mkNixosConfiguration = profile: user: theme: nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit self inputs profile user; };
+      specialArgs = { inherit self inputs profile user theme; };
       modules = [
         (self + /hosts/${profile}/default.nix)
         home-manager.nixosModules.home-manager {
           home-manager = {
             useUserPackages = true;
-            extraSpecialArgs = { inherit self inputs profile user; };
+            extraSpecialArgs = { inherit self inputs profile user theme; };
             users.${user.name} = import (self + /home/${profile}/default.nix);
             backupFileExtension = "backup";
           };
@@ -34,11 +34,19 @@
       desktop = mkNixosConfiguration "desktop" {
         name = "nayetdet";
         description = "João Pedro Moreira";
+      } {
+        color = "blue";
+        folderColor = "blue";
+        iconTheme = "Papirus-Dark";
       };
 
       laptop = mkNixosConfiguration "laptop" {
         name = "nayetdet";
         description = "João Pedro Moreira";
+      } {
+        color = "red";
+        folderColor = "black";
+        iconTheme = "Papirus-Dark";
       };
     };
 
