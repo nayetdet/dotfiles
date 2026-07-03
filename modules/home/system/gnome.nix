@@ -56,7 +56,7 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
         "color-picker@tuberry"
-        # "copyous@boerdereinar.dev"
+        "copyous@boerdereinar.dev"
         "dash-to-dock@micxgx.gmail.com"
         "ding@rastersoft.com"
         "emoji-copy@felipeftn"
