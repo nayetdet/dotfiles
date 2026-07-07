@@ -31,6 +31,7 @@
     nautilus
     gnome-disk-utility
     gnome-system-monitor
+    gnome-tweaks
   ];
 
   services.flatpak.packages = [
