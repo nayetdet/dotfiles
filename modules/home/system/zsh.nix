@@ -22,6 +22,7 @@
       };
 
       shellAliases = lib.mkIf config.zsh.aliases.enable {
+        ssh = "TERM=xterm-256color ssh";
         codex = "nix develop ${self}#agents -c codex";
         opencode = "nix develop ${self}#agents -c opencode";
       };
