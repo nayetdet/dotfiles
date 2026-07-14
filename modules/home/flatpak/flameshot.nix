@@ -1,5 +1,4 @@
 { self, config, lib, pkgs, ... }:
-
 let
   screenshotsDir = "${config.home.homeDirectory}/Pictures/Screenshots";
   flameshotConfigSource = self + /config/flameshot/flameshot.ini;
