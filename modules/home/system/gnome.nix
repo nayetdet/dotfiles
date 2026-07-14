@@ -103,6 +103,7 @@
     };
 
     "org/gnome/shell/extensions/quick-settings-audio-panel" = {
+      always-show-input-volume-slider = true;
       create-mpris-controllers = false;
       create-profile-switcher = true;
       group-applications-volume-sliders = true;
