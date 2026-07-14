@@ -1,10 +1,13 @@
 { pkgs, ... }: {
   # Nix
   documentation.nixos.enable = false;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 
   # Locale and Time Zone
   console.keyMap = "br-abnt2";
