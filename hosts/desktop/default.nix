@@ -64,16 +64,12 @@
 
   # Virtualisation
   virtualisation = {
-    docker.daemon.settings = {
-      data-root = "/run/media/HDD/.docker";
-    };
-
-    containers.storage.settings = {
-      storage = {
-        driver = "overlay";
-        graphroot = "/run/media/HDD/.podman";
-        runroot = "/run/containers/storage";
-      };
+    docker.daemon.settings.data-root = "/run/media/HDD/.docker";
+    containers.storage.settings.storage = {
+      driver = "overlay";
+      graphroot = "/run/media/HDD/.podman-root";
+      rootless_storage_path = "/run/media/HDD/.podman";
+      runroot = "/run/containers/storage";
     };
   };
 }
