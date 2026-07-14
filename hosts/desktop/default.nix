@@ -1,7 +1,7 @@
 { self, user, pkgs, ... }: {
   imports = [
     ./hardware.nix
-    ./mount.nix
+    ./mounts.nix
 
     (self + /modules/nix/default.nix)
     (self + /modules/nix/flatpak/gpu-screen-recorder.nix)

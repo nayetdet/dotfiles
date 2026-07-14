@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  # NixOS
+  # Nix
   documentation.nixos.enable = false;
   nix.settings.experimental-features = [
     "nix-command"
@@ -21,4 +21,8 @@
   # Programs
   programs.dconf.enable = true;
   programs.zsh.enable = true;
+
+  # Services
+  services.fstrim.enable = true;
+  services.smartd.enable = true;
 }

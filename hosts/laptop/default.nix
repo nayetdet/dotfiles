@@ -21,6 +21,7 @@
   # Bootloader and Kernel
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.luks.devices.cryptroot.allowDiscards = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking

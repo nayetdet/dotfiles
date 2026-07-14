@@ -1,6 +1,4 @@
 { ... }: {
-  services.fstrim.enable = true;
-
   fileSystems."/run/media/HDD" = {
     device = "/dev/disk/by-uuid/85aa32eb-672c-423d-9428-57d7e28d0525";
     fsType = "ext4";
