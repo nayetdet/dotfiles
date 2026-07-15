@@ -1,4 +1,4 @@
-{ user, ... }: {
+{ host, ... }: {
   programs.corectrl.enable = true;
 
   # AMDGPU
@@ -7,7 +7,7 @@
   # Polkit
   security.polkit.enable = true;
 
-  users.users.${user.name}.extraGroups = [
+  users.users.${host.user.name}.extraGroups = [
     "corectrl"
   ];
 }

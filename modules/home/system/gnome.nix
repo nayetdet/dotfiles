@@ -1,4 +1,4 @@
-{ self, profile, theme, pkgs, ... }: {
+{ self, host, pkgs, ... }: {
   home.packages = with pkgs.gnomeExtensions; [
     appindicator
     blur-my-shell
@@ -15,20 +15,20 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${self}/assets/wallpapers/${profile}.png";
-      picture-uri-dark = "file://${self}/assets/wallpapers/${profile}.png";
+      picture-uri = "file://${self}/assets/wallpapers/${host.id}.png";
+      picture-uri-dark = "file://${self}/assets/wallpapers/${host.id}.png";
       picture-options = "zoom";
     };
 
     "org/gnome/desktop/screensaver" = {
-      picture-uri = "file://${self}/assets/wallpapers/${profile}.png";
+      picture-uri = "file://${self}/assets/wallpapers/${host.id}.png";
       picture-options = "zoom";
     };
 
     "org/gnome/desktop/interface" = {
-      accent-color = theme.color;
+      accent-color = host.theme.color;
       color-scheme = "prefer-dark";
-      icon-theme = theme.iconTheme;
+      icon-theme = host.theme.iconTheme;
       enable-hot-corners = false;
 
       clock-format = "24h";

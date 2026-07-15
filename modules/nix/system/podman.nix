@@ -1,4 +1,4 @@
-{ user, config, lib, ... }:
+{ host, config, lib, ... }:
 let
   rootfullStoragePath = config.virtualisation.containers.storage.settings.storage.graphroot or null;
   rootlessStoragePath = config.virtualisation.containers.storage.settings.storage.rootless_storage_path or null;
@@ -15,8 +15,8 @@ in
       "z ${rootfullStoragePath} 0700 root root -"
     ])
     ++ (lib.optionals (rootlessStoragePath != null) [
-      "d ${rootlessStoragePath} 0700 ${user.name} users -"
-      "z ${rootlessStoragePath} 0700 ${user.name} users -"
+      "d ${rootlessStoragePath} 0700 ${host.user.name} users -"
+      "z ${rootlessStoragePath} 0700 ${host.user.name} users -"
     ]);
 
   systemd.services.podman.unitConfig.RequiresMountsFor =

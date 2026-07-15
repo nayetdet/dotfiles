@@ -1,7 +1,7 @@
-{ theme, pkgs, ... }: {
+{ host, pkgs, ... }: {
   home.packages = [
     (pkgs.papirus-icon-theme.override {
-      color = theme.folderColor;
+      color = host.theme.folderColor;
     })
   ];
 }

@@ -1,4 +1,4 @@
-{ user, ... }: {
+{ host, ... }: {
   services.printing.enable = true;
   services.avahi = {
     enable = true;
@@ -6,7 +6,7 @@
     openFirewall = true;
   };
 
-  users.users.${user.name}.extraGroups = [
+  users.users.${host.user.name}.extraGroups = [
     "lpadmin"
   ];
 }

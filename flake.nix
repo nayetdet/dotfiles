@@ -14,41 +14,53 @@
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
-    mkNixosConfiguration = profile: user: theme: nixpkgs.lib.nixosSystem {
+    mkNixosConfiguration = host: nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit self inputs profile user theme; };
+      specialArgs = { inherit self inputs host; };
       modules = [
-        (self + /hosts/${profile}/default.nix)
+        (self + /hosts/${host.id}/default.nix)
         home-manager.nixosModules.home-manager {
           home-manager = {
             useUserPackages = true;
-            extraSpecialArgs = { inherit self inputs profile user theme; };
-            users.${user.name} = import (self + /home/${profile}/default.nix);
+            extraSpecialArgs = { inherit self inputs host; };
+            users.${host.user.name} = import (self + /home/${host.id}/default.nix);
             backupFileExtension = "backup";
           };
         }
       ];
     };
   in {
-    nixosConfigurations = {
-      desktop = mkNixosConfiguration "desktop" {
-        name = "nayetdet";
-        description = "João Pedro Moreira";
-      } {
-        color = "blue";
-        folderColor = "blue";
-        iconTheme = "Papirus-Dark";
-      };
+    nixosConfigurations = nixpkgs.lib.mapAttrs
+      (id: host: mkNixosConfiguration (host // { inherit id; }))
+      {
+        desktop = {
+          stateVersion = "26.05";
+          user = {
+            name = "nayetdet";
+            description = "João Pedro Moreira";
+          };
 
-      laptop = mkNixosConfiguration "laptop" {
-        name = "nayetdet";
-        description = "João Pedro Moreira";
-      } {
-        color = "red";
-        folderColor = "black";
-        iconTheme = "Papirus-Dark";
+          theme = {
+            color = "blue";
+            folderColor = "blue";
+            iconTheme = "Papirus-Dark";
+          };
+        };
+
+        laptop = {
+          stateVersion = "26.05";
+          user = {
+            name = "nayetdet";
+            description = "João Pedro Moreira";
+          };
+
+          theme = {
+            color = "red";
+            folderColor = "black";
+            iconTheme = "Papirus-Dark";
+          };
+        };
       };
-    };
 
     devShells.${system} = {
       agents = import (self + /shells/agents.nix) { inherit pkgs; };

@@ -1,10 +1,10 @@
-{ user, config, lib, ... }:
+{ host, config, lib, ... }:
 let
   storagePath = config.virtualisation.docker.daemon.settings."data-root" or null;
 in {
   virtualisation.docker.enable = true;
 
-  users.users.${user.name}.extraGroups = [
+  users.users.${host.user.name}.extraGroups = [
     "docker"
   ];
 

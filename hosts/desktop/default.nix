@@ -1,4 +1,4 @@
-{ self, user, pkgs, ... }: {
+{ self, host, pkgs, ... }: {
   imports = [
     ./hardware.nix
     ./mounts.nix
@@ -19,7 +19,7 @@
   ];
 
   # State
-  system.stateVersion = "26.05";
+  system.stateVersion = host.stateVersion;
 
   # Bootloader and Kernel
   boot.loader.systemd-boot.enable = true;
@@ -53,9 +53,9 @@
   };
 
   # Users
-  users.users.${user.name} = {
+  users.users.${host.user.name} = {
     isNormalUser = true;
-    description = "${user.description}";
+    description = "${host.user.description}";
     extraGroups = [
       "networkmanager"
       "wheel"

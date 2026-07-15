@@ -1,4 +1,4 @@
-{ self, user, pkgs, ... }: {
+{ self, host, pkgs, ... }: {
   imports = [
     (self + /modules/home/default.nix)
     (self + /modules/home/flatpak/discord.nix)
@@ -15,9 +15,9 @@
     (self + /modules/home/system/zsh.nix)
   ];
 
-  home.username = "${user.name}";
-  home.homeDirectory = "/home/${user.name}";
-  home.stateVersion = "26.05";
+  home.username = "${host.user.name}";
+  home.homeDirectory = "/home/${host.user.name}";
+  home.stateVersion = host.stateVersion;
   home.packages = with pkgs; [
     # Containers & Virtualisation
     distrobox
