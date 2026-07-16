@@ -77,6 +77,7 @@
 
     # Recording & Streaming
     "com.obsproject.Studio"
+    "org.kde.kdenlive"
 
     # Security
     "com.bitwarden.desktop"
