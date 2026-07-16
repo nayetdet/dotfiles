@@ -33,6 +33,9 @@
     gnome-disk-utility
     gnome-system-monitor
     gnome-tweaks
+
+    # Utilities
+    xclicker
   ];
 
   services.flatpak.packages = [
@@ -41,6 +44,12 @@
 
     # Containers & Virtualisation
     "com.ranfdev.DistroShelf"
+
+    # Conversion Tools
+    "com.belmoussaoui.Decoder"
+    "com.github.huluti.Curtail"
+    "fr.handbrake.ghb"
+    "io.gitlab.adhami3310.Converter"
 
     # Development Tools
     "com.getpostman.Postman"
@@ -71,19 +80,17 @@
     "org.gnome.TextEditor"
     "org.gnome.Totem"
 
-    # Media & Entertainment
+    # Media
     "com.spotify.Client"
     "com.stremio.Stremio"
     "info.febvre.Komikku"
 
-    # Recording & Streaming
+    # Studio
     "com.obsproject.Studio"
+    "org.gimp.GIMP"
     "org.kde.kdenlive"
 
     # Security
     "com.bitwarden.desktop"
-
-    # Utilities
-    "com.belmoussaoui.Decoder"
   ];
 }
