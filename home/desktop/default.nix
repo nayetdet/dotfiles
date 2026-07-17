@@ -81,6 +81,7 @@
     "org.gnome.Totem"
 
     # Media
+    "com.rafaelmardojai.Blanket"
     "com.spotify.Client"
     "com.stremio.Stremio"
     "info.febvre.Komikku"
