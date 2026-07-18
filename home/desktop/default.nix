@@ -45,12 +45,6 @@
     # Containers & Virtualisation
     "com.ranfdev.DistroShelf"
 
-    # Conversion Tools
-    "com.belmoussaoui.Decoder"
-    "com.github.huluti.Curtail"
-    "fr.handbrake.ghb"
-    "io.gitlab.adhami3310.Converter"
-
     # Development Tools
     "com.getpostman.Postman"
     "com.mongodb.Compass"
@@ -81,7 +75,6 @@
     "org.gnome.Totem"
 
     # Media
-    "com.rafaelmardojai.Blanket"
     "com.spotify.Client"
     "com.stremio.Stremio"
     "info.febvre.Komikku"
@@ -93,5 +86,9 @@
 
     # Security
     "com.bitwarden.desktop"
+
+    # Utilities
+    "com.rafaelmardojai.Blanket"
+    "com.belmoussaoui.Decoder"
   ];
 }
