@@ -1,4 +1,4 @@
-{ self, config, lib, ... }: {
+{ config, lib, ... }: {
   options.zsh.aliases.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
@@ -21,9 +21,7 @@
         ];
       };
 
-      shellAliases = lib.mkIf config.zsh.aliases.enable {
-        ssh = "TERM=xterm-256color ssh";
-      };
+      shellAliases = lib.mkIf config.zsh.aliases.enable { };
     };
   };
 }
