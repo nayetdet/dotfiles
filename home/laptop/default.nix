@@ -27,14 +27,18 @@
     # Development Tools
     vscode
 
+    # Infrastructure as Code
+    ansible
+    terraform
+
+    # LLM Coding Agents
+    codex
+
     # GNOME Core Apps
     nautilus
     gnome-disk-utility
     gnome-system-monitor
     gnome-tweaks
-
-    # Utilities
-    xclicker
   ];
 
   services.flatpak.packages = [

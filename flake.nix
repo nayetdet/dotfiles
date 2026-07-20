@@ -61,9 +61,5 @@
           };
         };
       };
-
-    devShells.${system} = {
-      agents = import (self + /shells/agents.nix) { inherit pkgs; };
-    };
   };
 }
