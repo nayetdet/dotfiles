@@ -23,7 +23,7 @@
     distrobox
     kind
     kubectl
-    helm
+    kubernetes-helm
 
     # Development Tools
     vscode
