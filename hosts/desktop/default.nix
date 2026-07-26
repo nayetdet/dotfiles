@@ -27,7 +27,9 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking
-  networking =
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+  networking.networkmanager.ensureProfiles.profiles =
     let
       baseProfile = {
         connection = {
@@ -47,28 +49,24 @@
         };
       };
     in {
-      hostName = "nixos";
-      networkmanager.enable = true;
-      networkmanager.ensureProfiles.profiles = {
-        defaultProfile = baseProfile // {
-          connection = baseProfile.connection // {
-            id = "Wired connection 1";
-            autoconnect = true;
-          };
-
-          ipv4 = baseProfile.ipv4 // {
-            dns = "1.1.1.1;1.0.0.1;";
-          };
+      defaultProfile = baseProfile // {
+        connection = baseProfile.connection // {
+          id = "Wired connection 1";
+          autoconnect = true;
         };
 
-        homelabProfile = baseProfile // {
-          connection = baseProfile.connection // {
-            id = "Wired connection 2";
-          };
+        ipv4 = baseProfile.ipv4 // {
+          dns = "1.1.1.1;1.0.0.1;";
+        };
+      };
 
-          ipv4 = baseProfile.ipv4 // {
-            dns = "192.168.0.201;";
-          };
+      homelabProfile = baseProfile // {
+        connection = baseProfile.connection // {
+          id = "Wired connection 2";
+        };
+
+        ipv4 = baseProfile.ipv4 // {
+          dns = "192.168.0.201;";
         };
       };
     };
