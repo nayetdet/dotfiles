@@ -27,30 +27,51 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Networking
-  networking = {
-    hostName = "nixos";
-    networkmanager = {
-      enable = true;
-      ensureProfiles.profiles.static-profile = {
+  networking =
+    let
+      baseProfile = {
         connection = {
-          id = "Wired connection 1";
           type = "ethernet";
-          interface-name = "enp7s0"; 
+          interface-name = "enp7s0";
+          autoconnect = false;
         };
 
         ipv4 = {
           method = "manual";
           address1 = "192.168.0.100/24";
           gateway = "192.168.0.1";
-          dns = "192.168.0.201;";
         };
 
         ipv6 = {
           method = "disabled";
         };
       };
+    in {
+      hostName = "nixos";
+      networkmanager.enable = true;
+      networkmanager.ensureProfiles.profiles = {
+        defaultProfile = baseProfile // {
+          connection = baseProfile.connection // {
+            id = "Wired connection 1";
+            autoconnect = true;
+          };
+
+          ipv4 = baseProfile.ipv4 // {
+            dns = "1.1.1.1;1.0.0.1;";
+          };
+        };
+
+        homelabProfile = baseProfile // {
+          connection = baseProfile.connection // {
+            id = "Wired connection 2";
+          };
+
+          ipv4 = baseProfile.ipv4 // {
+            dns = "192.168.0.201;";
+          };
+        };
+      };
     };
-  };
 
   # Users
   users.users.${host.user.name} = {
