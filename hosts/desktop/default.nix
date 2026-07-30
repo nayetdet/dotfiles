@@ -29,47 +29,27 @@
   # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  networking.networkmanager.ensureProfiles.profiles =
-    let
-      baseProfile = {
-        connection = {
-          type = "ethernet";
-          interface-name = "enp7s0";
-          autoconnect = false;
-        };
-
-        ipv4 = {
-          method = "manual";
-          address1 = "192.168.0.100/24";
-          gateway = "192.168.0.1";
-        };
-
-        ipv6 = {
-          method = "disabled";
-        };
-      };
-    in {
-      defaultProfile = baseProfile // {
-        connection = baseProfile.connection // {
-          id = "Wired connection 1";
-          autoconnect = true;
-        };
-
-        ipv4 = baseProfile.ipv4 // {
-          dns = "1.1.1.1;1.0.0.1;";
-        };
+  networking.networkmanager.ensureProfiles.profiles = {
+    defaultProfile = {
+      connection = {
+        id = "Wired connection 1";
+        type = "ethernet";
+        interface-name = "enp7s0";
+        autoconnect = true;
       };
 
-      homelabProfile = baseProfile // {
-        connection = baseProfile.connection // {
-          id = "Wired connection 2";
-        };
+      ipv4 = {
+        method = "manual";
+        address1 = "192.168.0.100/24";
+        gateway = "192.168.0.1";
+        dns = "1.1.1.1;1.0.0.1;";
+      };
 
-        ipv4 = baseProfile.ipv4 // {
-          dns = "192.168.0.201;";
-        };
+      ipv6 = {
+        method = "disabled";
       };
     };
+  };
 
   # Users
   users.users.${host.user.name} = {
