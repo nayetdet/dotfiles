@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  setMinitelaBrightness = pkgs.writeShellScript "set-minitela-brightness" ''
+  setMinitelaBrightness = pkgs.writeShellScript "minitela-brightness" ''
     set -euo pipefail
     shopt -s nullglob
 
@@ -17,9 +17,8 @@ let
     ${pkgs.coreutils}/bin/sleep 1
     printf '%b' "$brightnessPacket" > "$device"
   '';
-in
-{
-  systemd.services.minitela-brilho = {
+in {
+  systemd.services.minitela-brightness = {
     description = "Set Minitela brightness to zero";
     after = [ "basic.target" ];
     wantedBy = [ "multi-user.target" ];
