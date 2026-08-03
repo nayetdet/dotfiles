@@ -17,7 +17,14 @@ let
     ${pkgs.coreutils}/bin/sleep 1
     printf '%b' "$brightnessPacket" > "$device"
   '';
+
+  setMinitelaBrightnessHook = pkgs.writeShellScript "minitela-system-sleep" ''
+    if [[ "''${1:-}" == post ]]; then
+      ${setMinitelaBrightness}
+    fi
+  '';
 in {
+  environment.etc."systemd/system-sleep/minitela-brightness".source = setMinitelaBrightnessHook;
   systemd.services.minitela-brightness = {
     description = "Set Minitela brightness to zero";
     after = [ "basic.target" ];
