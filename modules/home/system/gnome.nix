@@ -38,6 +38,10 @@
       clock-show-weekdate = true;
     };
 
+    "org/gnome/desktop/calendar" = {
+      show-weekdate = true;
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       show-desktop = [ "<Super>d" ];
     };
