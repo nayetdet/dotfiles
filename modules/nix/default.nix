@@ -13,6 +13,7 @@
   console.keyMap = "br-abnt2";
   services.xserver.xkb.layout = "br";
   services.xserver.xkb.variant = "abnt2";
+  services.timesyncd.enable = true;
   time.timeZone = "America/Fortaleza";
 
   # Networking
