@@ -25,21 +25,6 @@
   boot.initrd.luks.devices.cryptroot.allowDiscards = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Swap
-  boot.zswap = {
-    enable = true;
-    compressor = "zstd";
-    maxPoolPercent = 25;
-  };
-
-  services.earlyoom = {
-    enable = true;
-    freeMemThreshold = 10;
-    freeMemKillThreshold = 5;
-    freeSwapThreshold = 20;
-    freeSwapKillThreshold = 10;
-  };
-
   # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
