@@ -34,6 +34,7 @@
     isNormalUser = true;
     description = "${host.user.description}";
     extraGroups = [
+      "dialout"
       "networkmanager"
       "wheel"
     ];
