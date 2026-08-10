@@ -12,6 +12,7 @@
     (self + /modules/nix/system/minitela.nix)
     (self + /modules/nix/system/podman.nix)
     (self + /modules/nix/system/scrcpy.nix)
+    (self + /modules/nix/system/serial.nix)
     (self + /modules/nix/system/ssh.nix)
     (self + /modules/nix/system/tailscale.nix)
   ];
@@ -34,7 +35,6 @@
     isNormalUser = true;
     description = "${host.user.description}";
     extraGroups = [
-      "dialout"
       "networkmanager"
       "wheel"
     ];
