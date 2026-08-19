@@ -9,12 +9,13 @@
     (self + /modules/nix/system/fail2ban.nix)
     (self + /modules/nix/system/flatpak.nix)
     (self + /modules/nix/system/gnome.nix)
+    (self + /modules/nix/system/kinect.nix)
     (self + /modules/nix/system/minitela.nix)
     (self + /modules/nix/system/podman.nix)
     (self + /modules/nix/system/scrcpy.nix)
+    (self + /modules/nix/system/serial.nix)
     (self + /modules/nix/system/ssh.nix)
     (self + /modules/nix/system/tailscale.nix)
-    (self + /modules/nix/system/udev.nix)
   ];
 
   # State
