@@ -17,6 +17,7 @@
     (self + /modules/nix/system/serial.nix)
     (self + /modules/nix/system/ssh.nix)
     (self + /modules/nix/system/tailscale.nix)
+    (self + /modules/nix/system/virtualisation.nix)
   ];
 
   # State
