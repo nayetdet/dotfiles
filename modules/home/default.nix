@@ -6,6 +6,7 @@
     ffmpeg
     fzf
     git
+    git-lfs
     jq
     tmux
     tree
