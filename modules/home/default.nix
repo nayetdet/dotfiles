@@ -7,6 +7,7 @@
     fzf
     git
     git-lfs
+    gnumake
     jq
     tmux
     tree
