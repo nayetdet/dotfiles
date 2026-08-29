@@ -29,6 +29,9 @@
     # Development Tools
     vscode
 
+    # Studio
+    obs-studio
+
     # Infrastructure as Code
     ansible
     terraform
@@ -85,7 +88,6 @@
     "info.febvre.Komikku"
 
     # Studio
-    "com.obsproject.Studio"
     "org.gimp.GIMP"
     "org.kde.kdenlive"
 
