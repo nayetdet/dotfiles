@@ -68,7 +68,6 @@
     "org.qbittorrent.qBittorrent"
 
     # Gaming
-    "com.parsecgaming.parsec"
     "org.prismlauncher.PrismLauncher"
     "sh.ppy.osu"
 
@@ -86,6 +85,10 @@
     "com.spotify.Client"
     "com.stremio.Stremio"
     "info.febvre.Komikku"
+
+    # Remote Access
+    "com.anydesk.Anydesk"
+    "com.parsecgaming.parsec"
 
     # Studio
     "org.gimp.GIMP"
