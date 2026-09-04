@@ -1,5 +1,8 @@
 { self, host, pkgs, ... }: {
-  home.packages = with pkgs.gnomeExtensions; [
+  home.packages = with pkgs; [
+    libgda6
+    gsound
+  ] ++ (with pkgs.gnomeExtensions; [
     appindicator
     blur-my-shell
     color-picker
@@ -11,7 +14,7 @@
     lock-keys-2
     quick-settings-audio-panel
     status-area-horizontal-spacing
-  ];
+  ]);
 
   home.file.".face".source = "${self}/assets/avatars/${host.id}.png";
 
