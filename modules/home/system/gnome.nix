@@ -3,7 +3,6 @@
     libgda6
     gsound
   ] ++ (with pkgs.gnomeExtensions; [
-    appindicator
     blur-my-shell
     color-picker
     copyous
@@ -14,6 +13,7 @@
     lock-keys-2
     quick-settings-audio-panel
     status-area-horizontal-spacing
+    status-tray
   ]);
 
   home.file.".face".source = "${self}/assets/avatars/${host.id}.png";
@@ -62,7 +62,6 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
         "color-picker@tuberry"
         "copyous@boerdereinar.dev"
@@ -73,6 +72,7 @@
         "lockkeys@vaina.lt"
         "quick-settings-audio-panel@rayzeq.github.io"
         "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
+        "status-tray@keithvassallo.com"
       ];
     };
 
@@ -120,6 +120,13 @@
       move-output-volume-slider = false;
       mpris-controlers-are-moved = false;
       panel-type = "merged-panel";
+    };
+
+    "org/gnome/shell/extensions/status-tray" = {
+      icon-mode = "original";
+      overflow-enabled = true;
+      overflow-icon-style = "dynamic-original";
+      overflow-inline-count = 0;
     };
   };
 }
