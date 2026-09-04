@@ -7,7 +7,7 @@
     (self + /modules/home/flatpak/gpu-screen-recorder.nix)
     (self + /modules/home/flatpak/sober.nix)
     (self + /modules/home/flatpak/steam.nix)
-    (self + /modules/home/system/corectrl.nix)
+    (self + /modules/home/system/exclusive/desktop/corectrl.nix)
     (self + /modules/home/system/direnv.nix)
     (self + /modules/home/system/flatpak.nix)
     (self + /modules/home/system/ghostty.nix)
