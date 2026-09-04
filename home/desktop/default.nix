@@ -72,6 +72,7 @@
     "sh.ppy.osu"
 
     # GNOME Core Apps
+    "ca.desrt.dconf-editor"
     "org.gnome.baobab"
     "org.gnome.Calculator"
     "org.gnome.Decibels"
