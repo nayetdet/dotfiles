@@ -16,8 +16,6 @@
     status-tray
   ]);
 
-  home.file.".face".source = "${self}/assets/avatars/${host.id}.png";
-
   dconf.settings = {
     "org/gnome/desktop/background" = {
       picture-uri = "file://${self}/assets/wallpapers/${host.id}.png";
