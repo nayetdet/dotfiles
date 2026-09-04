@@ -5,10 +5,9 @@
 
   services.flatpak = {
     enable = true;
-    update.auto = {
-      enable = true;
-      onCalendar = "daily";
-    };
+    update.auto.enable = true;
+    update.auto.onCalendar = "daily";
+    overrides.global.Context.filesystems = [ "xdg-data/icons:ro" ];
   };
 
   xdg.systemDirs.data = [
