@@ -8,6 +8,7 @@
     (self + /modules/nix/system/app-image.nix)
     (self + /modules/nix/system/corectrl.nix)
     (self + /modules/nix/system/cups.nix)
+    (self + /modules/nix/system/dialout.nix)
     (self + /modules/nix/system/docker.nix)
     (self + /modules/nix/system/fail2ban.nix)
     (self + /modules/nix/system/flatpak.nix)
@@ -15,7 +16,6 @@
     (self + /modules/nix/system/libvirt.nix)
     (self + /modules/nix/system/podman.nix)
     (self + /modules/nix/system/scrcpy.nix)
-    (self + /modules/nix/system/serial.nix)
     (self + /modules/nix/system/ssh.nix)
     (self + /modules/nix/system/tailscale.nix)
   ];
