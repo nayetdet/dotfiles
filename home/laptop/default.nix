@@ -73,6 +73,7 @@
     # GNOME Core Apps
     "org.gnome.baobab"
     "org.gnome.Calculator"
+    "org.gnome.Decibels"
     "org.gnome.Evince"
     "org.gnome.Loupe"
     "org.gnome.Music"
