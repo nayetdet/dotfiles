@@ -85,7 +85,6 @@
     # Media
     "com.spotify.Client"
     "com.stremio.Stremio"
-    "info.febvre.Komikku"
 
     # Remote Access
     "com.anydesk.Anydesk"
