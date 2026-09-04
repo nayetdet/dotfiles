@@ -29,9 +29,6 @@
     # Development Tools
     vscode
 
-    # Studio
-    obs-studio
-
     # Infrastructure as Code
     ansible
     terraform
@@ -44,6 +41,9 @@
     gnome-disk-utility
     gnome-system-monitor
     gnome-tweaks
+
+    # Studio
+    obs-studio
   ];
 
   services.flatpak.packages = [
