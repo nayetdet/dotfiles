@@ -18,9 +18,6 @@
   # Networking
   networking.firewall.enable = true;
 
-  # Users
-  users.defaultUserShell = pkgs.zsh;
-
   # Programs
   programs.dconf.enable = true;
   programs.zsh.enable = true;

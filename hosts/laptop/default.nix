@@ -36,6 +36,7 @@
   users.users.${host.user.name} = {
     isNormalUser = true;
     description = "${host.user.description}";
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
