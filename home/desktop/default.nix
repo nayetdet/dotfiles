@@ -27,6 +27,7 @@
     kind
     kubectl
     kubernetes-helm
+    ngrok
     terraform
     vscode
 
