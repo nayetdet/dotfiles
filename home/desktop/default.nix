@@ -20,21 +20,15 @@
   home.homeDirectory = "/home/${host.user.name}";
   home.stateVersion = host.stateVersion;
   home.packages = with pkgs; [
-    # Containers & Virtualisation
+    # Development Tools
+    ansible
+    codex
     distrobox
     kind
     kubectl
     kubernetes-helm
-
-    # Development Tools
-    vscode
-
-    # Infrastructure as Code
-    ansible
     terraform
-
-    # LLM Coding Agents
-    codex
+    vscode
 
     # GNOME Core Apps
     nautilus
