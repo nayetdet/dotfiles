@@ -73,6 +73,7 @@
     "org.gnome.Evince"
     "org.gnome.Loupe"
     "org.gnome.Music"
+    "org.gnome.Snapshot"
     "org.gnome.SimpleScan"
     "org.gnome.TextEditor"
     "org.gnome.Totem"
