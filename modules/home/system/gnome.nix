@@ -85,6 +85,7 @@
     };
 
     "org/gnome/shell/extensions/copyous" = {
+      database-backend = "json";
       clipboard-history = "keep-all";
       clipboard-position-vertical = "bottom";
       history-length = 150;
