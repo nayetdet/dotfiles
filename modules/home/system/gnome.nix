@@ -94,13 +94,15 @@
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
+      autohide = true;
       background-color = "rgb(0,0,0)";
       custom-background-color = true;
       custom-theme-shrink = true;
       dash-max-icon-size = 48;
-      dock-fixed = true;
-      dock-position = "LEFT";
-      extend-height = true;
+      dock-fixed = false;
+      dock-position = "BOTTOM";
+      intellihide = true;
+      pressure-threshold = 25.0;
       running-indicator-dominant-color = true;
       running-indicator-style = "DOTS";
     };
