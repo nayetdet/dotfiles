@@ -1,4 +1,4 @@
-{ self, host, pkgs, ... }: {
+{ self, host, pkgs, lib, ... }: {
   home.packages = with pkgs; [
     libgda6
     gsound
@@ -90,7 +90,7 @@
       history-length = 150;
       item-height = 250;
       open-clipboard-dialog-shortcut = [ "<Super>V" ];
-      toggle-incognito-mode-shortut = [];
+      toggle-incognito-mode-shortcut = [];
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
