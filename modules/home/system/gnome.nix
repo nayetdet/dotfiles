@@ -3,6 +3,8 @@
     libgda6
     gsound
   ] ++ (with pkgs.gnomeExtensions; [
+    advanced-alttab-window-switcher
+    appindicator
     blur-my-shell
     color-picker
     copyous
@@ -13,7 +15,6 @@
     lock-keys-2
     quick-settings-audio-panel
     status-area-horizontal-spacing
-    status-tray
   ]);
 
   dconf.settings = {
@@ -121,13 +122,6 @@
       move-output-volume-slider = false;
       mpris-controlers-are-moved = false;
       panel-type = "merged-panel";
-    };
-
-    "org/gnome/shell/extensions/status-tray" = {
-      icon-mode = "original";
-      overflow-enabled = true;
-      overflow-icon-style = "dynamic-original";
-      overflow-inline-count = 0;
     };
   };
 }

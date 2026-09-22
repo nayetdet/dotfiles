@@ -11,17 +11,20 @@
     gnumake
     jq
 
-    # Disks and filesystems
-    dosfstools
-    gptfdisk
-    parted
-
     # Hardware and networking
     dnsutils
     ethtool
     iproute2
+    iperf3
+    mtr
+    net-tools
+    nmap
     pciutils
+    socat
+    tcpdump
+    traceroute
     usbutils
+    whois
 
     # Media and downloads
     ffmpeg
