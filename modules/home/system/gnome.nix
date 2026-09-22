@@ -3,7 +3,6 @@
     libgda6
     gsound
   ] ++ (with pkgs.gnomeExtensions; [
-    advanced-alttab-window-switcher
     appindicator
     blur-my-shell
     color-picker
@@ -61,7 +60,6 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "advanced-alt-tab@G-dH.github.com"
         "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
         "color-picker@tuberry"
