@@ -5,10 +5,11 @@
 
     (self + /modules/nix/default.nix)
     (self + /modules/nix/flatpak/gpu-screen-recorder.nix)
-    (self + /modules/nix/system/app-image.nix)
+    (self + /modules/nix/system/appimage.nix)
     (self + /modules/nix/system/corectrl.nix)
     (self + /modules/nix/system/cups.nix)
     (self + /modules/nix/system/dialout.nix)
+    (self + /modules/nix/system/direnv.nix)
     (self + /modules/nix/system/docker.nix)
     (self + /modules/nix/system/fail2ban.nix)
     (self + /modules/nix/system/flatpak.nix)

@@ -61,6 +61,8 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
+        "advanced-alt-tab@G-dH.github.com"
+        "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
         "color-picker@tuberry"
         "copyous@boerdereinar.dev"
@@ -71,7 +73,6 @@
         "lockkeys@vaina.lt"
         "quick-settings-audio-panel@rayzeq.github.io"
         "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
-        "status-tray@keithvassallo.com"
       ];
     };
 
@@ -107,6 +108,10 @@
       pressure-threshold = 25.0;
       running-indicator-dominant-color = true;
       running-indicator-style = "DOTS";
+    };
+
+    "org/gnome/shell/extensions/emoji-copy" = {
+      always-show = false;
     };
 
     "org/gnome/shell/extensions/freespace" = {

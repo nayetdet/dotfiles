@@ -1,14 +1,15 @@
 { self, host, pkgs, ... }: {
   imports = [
     (self + /modules/home/default.nix)
+
     (self + /modules/home/flatpak/discord.nix)
     (self + /modules/home/flatpak/firefox.nix)
     (self + /modules/home/flatpak/flameshot.nix)
     (self + /modules/home/flatpak/gpu-screen-recorder.nix)
     (self + /modules/home/flatpak/sober.nix)
     (self + /modules/home/flatpak/steam.nix)
+
     (self + /modules/home/system/exclusive/desktop/corectrl.nix)
-    (self + /modules/home/system/direnv.nix)
     (self + /modules/home/system/flatpak.nix)
     (self + /modules/home/system/ghostty.nix)
     (self + /modules/home/system/gnome.nix)
