@@ -37,9 +37,6 @@
     gnome-disk-utility
     gnome-system-monitor
     gnome-tweaks
-
-    # Studio
-    obs-studio
   ];
 
   services.flatpak.packages = [
@@ -89,6 +86,7 @@
     "com.parsecgaming.parsec"
 
     # Studio
+    "com.obsproject.Studio"
     "org.gimp.GIMP"
     "org.kde.kdenlive"
 
