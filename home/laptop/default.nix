@@ -20,6 +20,7 @@
   home.packages = with pkgs; [
     # Development Tools
     ansible
+    awscli2
     codex
     distrobox
     kind
