@@ -92,7 +92,6 @@
     "com.bitwarden.desktop"
 
     # Utilities
-    "com.rafaelmardojai.Blanket"
     "com.belmoussaoui.Decoder"
   ];
 }
