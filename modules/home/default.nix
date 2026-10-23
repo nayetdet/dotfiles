@@ -12,6 +12,7 @@
     jq
 
     # Hardware and networking
+    arp-scan
     dnsutils
     ethtool
     iproute2
