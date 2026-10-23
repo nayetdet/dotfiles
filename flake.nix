@@ -11,30 +11,12 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
-    mkNixosConfiguration = host: nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { inherit self inputs host; };
-      modules = [
-        (self + /hosts/${host.id}/default.nix)
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useUserPackages = true;
-            extraSpecialArgs = { inherit self inputs host; };
-            users.${host.user.username} = import (self + /home/${host.id}/default.nix);
-            backupFileExtension = "backup";
-          };
-        }
-      ];
-  };
-  in {
-    nixosConfigurations = nixpkgs.lib.mapAttrs
-      (id: host: mkNixosConfiguration (host // { inherit id; }))
-      {
-        desktop = {
+    let
+      mkHost = id: overrides:
+        nixpkgs.lib.recursiveUpdate {
+          system = "x86_64-linux";
           stateVersion = "26.05";
+
           user = {
             username = "nayetdet";
             name = "João Pedro Moreira";
@@ -45,21 +27,28 @@
             folderTheme = "blue";
             iconTheme = "Papirus-Dark";
           };
-        };
+        } overrides // { inherit id; };
 
-        laptop = {
-          stateVersion = "26.05";
-          user = {
-            username = "nayetdet";
-            name = "João Pedro Moreira";
-          };
-
-          theme = {
-            theme = "blue";
-            folderTheme = "blue";
-            iconTheme = "Papirus-Dark";
-          };
-        };
+      mkConfiguration = host: nixpkgs.lib.nixosSystem {
+        system = host.system;
+        specialArgs = { inherit self inputs host; };
+        modules = [
+          (self + /hosts/${host.id}/default.nix)
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useUserPackages = true;
+              extraSpecialArgs = { inherit self inputs host; };
+              users.${host.user.username} = import (self + /home/${host.id}/default.nix);
+              backupFileExtension = "backup";
+            };
+          }
+        ];
       };
-  };
+    in {
+      nixosConfigurations = nixpkgs.lib.mapAttrs
+        (id: overrides: mkConfiguration (mkHost id overrides)) {
+          desktop = { };
+          laptop = { };
+        };
+    };
 }
