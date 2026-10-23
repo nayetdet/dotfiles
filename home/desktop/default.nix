@@ -17,8 +17,8 @@
     (self + /modules/home/system/zsh.nix)
   ];
 
-  home.username = "${host.user.name}";
-  home.homeDirectory = "/home/${host.user.name}";
+  home.username = "${host.user.username}";
+  home.homeDirectory = "/home/${host.user.username}";
   home.stateVersion = host.stateVersion;
   home.packages = with pkgs; [
     # Development Tools

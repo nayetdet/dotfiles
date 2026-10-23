@@ -11,7 +11,7 @@
   ];
 
   systemd.tmpfiles.rules = [
-    "L+ /var/lib/AccountsService/icons/${host.user.name} - - - - ${self}/assets/avatars/${host.id}.png"
-    "f+ /var/lib/AccountsService/users/${host.user.name} 0644 root root - [User]\\nIcon=/var/lib/AccountsService/icons/${host.user.name}"
+    "L+ /var/lib/AccountsService/icons/${host.user.username} - - - - ${self}/assets/avatar.png"
+    "f+ /var/lib/AccountsService/users/${host.user.username} 0644 root root - [User]\\nIcon=/var/lib/AccountsService/icons/${host.user.username}"
   ];
 }

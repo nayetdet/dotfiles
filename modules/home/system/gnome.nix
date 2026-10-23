@@ -4,7 +4,6 @@
     gsound
   ] ++ (with pkgs.gnomeExtensions; [
     appindicator
-    blur-my-shell
     color-picker
     copyous
     dash-to-dock
@@ -18,18 +17,18 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${self}/assets/wallpapers/${host.id}.png";
-      picture-uri-dark = "file://${self}/assets/wallpapers/${host.id}.png";
+      picture-uri = "file://${self}/assets/wallpaper.png";
+      picture-uri-dark = "file://${self}/assets/wallpaper.png";
       picture-options = "zoom";
     };
 
     "org/gnome/desktop/screensaver" = {
-      picture-uri = "file://${self}/assets/wallpapers/${host.id}.png";
+      picture-uri = "file://${self}/assets/wallpaper.png";
       picture-options = "zoom";
     };
 
     "org/gnome/desktop/interface" = {
-      accent-color = host.theme.color;
+      accent-color = host.theme.theme;
       color-scheme = "prefer-dark";
       icon-theme = host.theme.iconTheme;
       enable-hot-corners = false;
@@ -61,7 +60,6 @@
       disable-user-extensions = false;
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "blur-my-shell@aunetx"
         "color-picker@tuberry"
         "copyous@boerdereinar.dev"
         "dash-to-dock@micxgx.gmail.com"
@@ -72,16 +70,6 @@
         "quick-settings-audio-panel@rayzeq.github.io"
         "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
       ];
-    };
-
-    "org/gnome/shell/extensions/blur-my-shell/overview" = {
-      blur = false;
-    };
-
-    "org/gnome/shell/extensions/blur-my-shell/panel" = {
-      brightness = 0.0;
-      static-blur = false;
-      unblur-in-overview = false;
     };
 
     "org/gnome/shell/extensions/copyous" = {

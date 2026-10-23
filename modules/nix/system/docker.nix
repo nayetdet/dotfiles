@@ -4,7 +4,7 @@ let
 in {
   virtualisation.docker.enable = true;
 
-  users.users.${host.user.name}.extraGroups = [
+  users.users.${host.user.username}.extraGroups = [
     "docker"
   ];
 

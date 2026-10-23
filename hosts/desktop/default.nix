@@ -55,9 +55,9 @@
   };
 
   # Users
-  users.users.${host.user.name} = {
+  users.users.${host.user.username} = {
     isNormalUser = true;
-    description = "${host.user.description}";
+    description = host.user.name;
     shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"

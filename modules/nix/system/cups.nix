@@ -6,7 +6,7 @@
     openFirewall = true;
   };
 
-  users.users.${host.user.name}.extraGroups = [
+  users.users.${host.user.username}.extraGroups = [
     "lpadmin"
   ];
 }

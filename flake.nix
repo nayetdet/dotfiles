@@ -23,12 +23,12 @@
           home-manager = {
             useUserPackages = true;
             extraSpecialArgs = { inherit self inputs host; };
-            users.${host.user.name} = import (self + /home/${host.id}/default.nix);
+            users.${host.user.username} = import (self + /home/${host.id}/default.nix);
             backupFileExtension = "backup";
           };
         }
       ];
-    };
+  };
   in {
     nixosConfigurations = nixpkgs.lib.mapAttrs
       (id: host: mkNixosConfiguration (host // { inherit id; }))
@@ -36,13 +36,13 @@
         desktop = {
           stateVersion = "26.05";
           user = {
-            name = "nayetdet";
-            description = "João Pedro Moreira";
+            username = "nayetdet";
+            name = "João Pedro Moreira";
           };
 
           theme = {
-            color = "blue";
-            folderColor = "blue";
+            theme = "blue";
+            folderTheme = "blue";
             iconTheme = "Papirus-Dark";
           };
         };
@@ -50,13 +50,13 @@
         laptop = {
           stateVersion = "26.05";
           user = {
-            name = "nayetdet";
-            description = "João Pedro Moreira";
+            username = "nayetdet";
+            name = "João Pedro Moreira";
           };
 
           theme = {
-            color = "red";
-            folderColor = "black";
+            theme = "blue";
+            folderTheme = "blue";
             iconTheme = "Papirus-Dark";
           };
         };

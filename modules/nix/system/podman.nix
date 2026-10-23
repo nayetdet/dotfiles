@@ -14,8 +14,8 @@ in {
       "z ${rootfullStoragePath} 0700 root root -"
     ])
     ++ (lib.optionals (rootlessStoragePath != null) [
-      "d ${rootlessStoragePath} 0700 ${host.user.name} users -"
-      "z ${rootlessStoragePath} 0700 ${host.user.name} users -"
+      "d ${rootlessStoragePath} 0700 ${host.user.username} users -"
+      "z ${rootlessStoragePath} 0700 ${host.user.username} users -"
     ]);
 
   systemd.services.podman.unitConfig.RequiresMountsFor =
