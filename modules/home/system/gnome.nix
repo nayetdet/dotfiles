@@ -49,7 +49,7 @@
     };
 
     "org/gnome/shell/keybindings" = {
-      toggle-message-tray = [];
+      toggle-message-tray = [ ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -79,7 +79,7 @@
       history-length = 150;
       item-height = 250;
       open-clipboard-dialog-shortcut = [ "<Super>V" ];
-      toggle-incognito-mode-shortcut = [];
+      toggle-incognito-mode-shortcut = [ ];
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {

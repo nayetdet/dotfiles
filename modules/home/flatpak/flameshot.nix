@@ -51,7 +51,7 @@ in {
 
   dconf.settings = {
     "org/gnome/shell/keybindings" = {
-      show-screenshot-ui = [];
+      show-screenshot-ui = [ ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
