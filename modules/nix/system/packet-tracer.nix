@@ -12,13 +12,21 @@ let
         src = packetTracerInstaller;
       });
     });
+
+  packetTracerDesktop = pkgs.makeDesktopItem {
+    name = "packettracer9";
+    desktopName = "Cisco Packet Tracer";
+    exec = lib.getExe packetTracer;
+    icon = "packet-tracer";
+    categories = [ "Education" "Network" ];
+  };
 in {
   programs.firejail = {
     enable = true;
     wrappedBinaries = {
       packettracer9 = {
         executable = lib.getExe packetTracer;
-        desktop = "${packetTracer}/share/applications/cisco-packet-tracer-9.desktop";
+        desktop = "${packetTracerDesktop}/share/applications/packettracer9.desktop";
         extraArgs = [
           "--net=none"
           "--noprofile"
