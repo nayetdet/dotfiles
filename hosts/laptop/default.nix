@@ -18,6 +18,7 @@
     (self + /modules/nix/system/scrcpy.nix)
     (self + /modules/nix/system/ssh.nix)
     (self + /modules/nix/system/tailscale.nix)
+    (self + /modules/nix/system/wireshark.nix)
   ];
 
   # State
