@@ -15,7 +15,7 @@ let
   packetTracerDesktop = pkgs.makeDesktopItem {
     name = "packettracer";
     desktopName = "Cisco Packet Tracer";
-    exec = "${lib.getExe packetTracer} %f";
+    exec = "packettracer %f";
     icon = "packet-tracer";
     terminal = false;
     startupNotify = true;
@@ -30,12 +30,12 @@ let
     ];
   };
 in {
+  environment.systemPackages = [ packetTracerDesktop ];
   programs.firejail = {
     enable = true;
     wrappedBinaries = {
       packettracer = {
         executable = lib.getExe packetTracer;
-        desktop = "${packetTracerDesktop}/share/applications/packettracer.desktop";
         extraArgs = [
           "--net=none"
           "--noprofile"
