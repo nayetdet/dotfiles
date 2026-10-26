@@ -50,7 +50,7 @@
       };
 
       ipv6 = {
-        method = "disabled";
+        method = "auto";
       };
     };
   };
