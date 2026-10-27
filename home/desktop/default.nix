@@ -87,8 +87,6 @@
 
     # Studio
     "com.obsproject.Studio"
-    "org.gimp.GIMP"
-    "org.kde.kdenlive"
 
     # Security
     "com.bitwarden.desktop"
