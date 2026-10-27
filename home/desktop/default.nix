@@ -12,6 +12,7 @@
     (self + /modules/home/system/ghostty.nix)
     (self + /modules/home/system/gnome.nix)
     (self + /modules/home/system/papirus.nix)
+    (self + /modules/home/system/vscodium.nix)
     (self + /modules/home/system/zsh.nix)
   ];
 
@@ -29,7 +30,6 @@
     kubernetes-helm
     ngrok
     terraform
-    vscode
 
     # GNOME Core Apps
     nautilus
