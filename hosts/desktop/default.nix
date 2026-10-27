@@ -4,7 +4,6 @@
     ./mounts.nix
 
     (self + /modules/nix/default.nix)
-    (self + /modules/nix/flatpak/gpu-screen-recorder.nix)
     (self + /modules/nix/system/appimage.nix)
     (self + /modules/nix/system/corectrl.nix)
     (self + /modules/nix/system/cups.nix)

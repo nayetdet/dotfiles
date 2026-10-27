@@ -3,7 +3,6 @@
     ./hardware.nix
 
     (self + /modules/nix/default.nix)
-    (self + /modules/nix/flatpak/gpu-screen-recorder.nix)
     (self + /modules/nix/system/exclusive/laptop/kinect.nix)
     (self + /modules/nix/system/exclusive/laptop/minitela.nix)
     (self + /modules/nix/system/appimage.nix)

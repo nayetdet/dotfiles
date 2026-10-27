@@ -4,7 +4,6 @@
     (self + /modules/home/flatpak/discord.nix)
     (self + /modules/home/flatpak/firefox.nix)
     (self + /modules/home/flatpak/flameshot.nix)
-    (self + /modules/home/flatpak/gpu-screen-recorder.nix)
     (self + /modules/home/flatpak/sober.nix)
     (self + /modules/home/flatpak/steam.nix)
     (self + /modules/home/system/direnv.nix)
