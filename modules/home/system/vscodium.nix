@@ -34,6 +34,11 @@
         "git.decorations.enabled" = true;
         "explorer.decorations.colors" = true;
         "explorer.decorations.badges" = true;
+        "workbench.colorCustomizations" = {
+          "gitDecoration.modifiedResourceForeground" = "#e2c08d";
+          "gitDecoration.addedResourceForeground" = "#81b88b";
+          "gitDecoration.untrackedResourceForeground" = "#81b88b";
+        };
         "editor.fontFamily" = "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace";
         "files.autoSave" = "afterDelay";
         "[javascript]" = {
