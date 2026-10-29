@@ -8,6 +8,7 @@
     # Development
     git
     git-lfs
+    gh
     gnumake
     jq
 
