@@ -8,7 +8,6 @@
     # Development
     git
     git-lfs
-    github-copilot-cli
     gh
     gnumake
     jq

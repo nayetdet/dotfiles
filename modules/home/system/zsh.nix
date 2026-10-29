@@ -22,7 +22,7 @@
       };
 
       shellAliases = lib.mkIf config.zsh.aliases.enable {
-        ghccm = "gh copilot -p 'Write a short commit message in English for the staged changes. Follow Conventional Commits (feat, fix, chore, perf, docs, refactor, test, build). Output only the commit message.' -s";
+        ghccm = "gh copilot -- -p 'Read the staged diff and write a specific English commit message in Conventional Commits format (type(scope): summary). Output only the message.' -s --allow-tool='shell(git:*)'";
       };
     };
   };

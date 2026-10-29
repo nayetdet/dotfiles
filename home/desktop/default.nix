@@ -25,6 +25,7 @@
     awscli2
     codex
     distrobox
+    github-copilot-cli
     kind
     kubectl
     kubernetes-helm
