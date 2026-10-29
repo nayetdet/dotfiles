@@ -21,7 +21,9 @@
         ];
       };
 
-      shellAliases = lib.mkIf config.zsh.aliases.enable { };
+      shellAliases = lib.mkIf config.zsh.aliases.enable {
+        ghccm = "gh copilot -p 'Write a short commit message in English for the staged changes. Follow Conventional Commits (feat, fix, chore, perf, docs, refactor, test, build). Output only the commit message.' -s";
+      };
     };
   };
 }

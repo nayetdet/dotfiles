@@ -1,7 +1,7 @@
 { host, config, lib, ... }:
 let
-  rootfullStoragePath = config.virtualisation.containers.storage.settings.storage.graphroot or null;
-  rootlessStoragePath = config.virtualisation.containers.storage.settings.storage.rootless_storage_path or null;
+  rootfullStoragePath = config.virtualisation.containers.storage.rootful.settings.storage.graphroot or null;
+  rootlessStoragePath = config.virtualisation.containers.storage.rootless.settings.storage.graphroot or null;
 in {
   virtualisation.podman = {
     enable = true;
