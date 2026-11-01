@@ -2,7 +2,7 @@
   options.zsh.aliases.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
-    description = "enable zsh aliases";
+    description = "enable configured shell aliases";
   };
 
   config = {
@@ -20,10 +20,10 @@
           "zoxide"
         ];
       };
+    };
 
-      shellAliases = lib.mkIf config.zsh.aliases.enable {
-        ghccm = "gh copilot -- -p 'Read the staged diff and write a specific English commit message in Conventional Commits format (type(scope): summary). Output only the message.' -s --allow-tool='shell(git:*)'";
-      };
+    home.shellAliases = lib.mkIf config.zsh.aliases.enable {
+      ghccm = "gh copilot -- -p 'Read the staged diff and write a specific English commit message in Conventional Commits format (type(scope): summary). Output only the message.' -s --allow-tool='shell(git:*)'";
     };
   };
 }
