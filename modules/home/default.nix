@@ -5,34 +5,38 @@
     unzip
     zip
 
-    # Development
+    # Development Tools
     git
     git-lfs
     gh
     gnumake
+
+    # Data Processing
     jq
 
-    # Hardware and networking
+    # Hardware Utilities
+    ethtool
+    pciutils
+    usbutils
+
+    # Networking
     arp-scan
     dnsutils
-    ethtool
     iproute2
     iperf3
     mtr
     net-tools
     nmap
-    pciutils
     socat
     tcpdump
     traceroute
-    usbutils
     whois
 
-    # Media and downloads
+    # Media
     ffmpeg
     yt-dlp
 
-    # System utilities
+    # System Utilities
     fastfetch
     file
     lsof
