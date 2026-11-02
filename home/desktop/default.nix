@@ -1,98 +1,10 @@
-{ self, host, pkgs, ... }: {
+{ self, host, ... }: {
   imports = [
     (self + /modules/home/default.nix)
-    (self + /modules/home/flatpak/discord.nix)
-    (self + /modules/home/flatpak/firefox.nix)
-    (self + /modules/home/flatpak/flameshot.nix)
-    (self + /modules/home/flatpak/sober.nix)
-    (self + /modules/home/flatpak/steam.nix)
     (self + /modules/home/system/exclusive/desktop/corectrl.nix)
-    (self + /modules/home/system/direnv.nix)
-    (self + /modules/home/system/flatpak.nix)
-    (self + /modules/home/system/ghostty.nix)
-    (self + /modules/home/system/gnome.nix)
-    (self + /modules/home/system/lazyvim.nix)
-    (self + /modules/home/system/papirus.nix)
-    (self + /modules/home/system/vscodium.nix)
-    (self + /modules/home/system/zsh.nix)
   ];
 
-  home.username = "${host.user.username}";
+  home.username = host.user.username;
   home.homeDirectory = "/home/${host.user.username}";
   home.stateVersion = host.stateVersion;
-  home.packages = with pkgs; [
-    # Development Tools
-    ansible
-    awscli2
-    codex
-    distrobox
-    github-copilot-cli
-    kind
-    kubectl
-    kubernetes-helm
-    ngrok
-    terraform
-
-    # GNOME Core Apps
-    nautilus
-    gnome-disk-utility
-    gnome-system-monitor
-    gnome-tweaks
-  ];
-
-  services.flatpak.packages = [
-    # Browsers
-    "com.brave.Browser"
-
-    # Containers & Virtualisation
-    "com.ranfdev.DistroShelf"
-
-    # Development Tools
-    "com.getpostman.Postman"
-    "com.mongodb.Compass"
-    "com.redis.RedisInsight"
-    "io.dbeaver.DBeaverCommunity"
-
-    # Documents
-    "org.libreoffice.LibreOffice"
-
-    # Downloading
-    "com.vysp3r.ProtonPlus"
-    "org.nickvision.tubeconverter"
-    "org.qbittorrent.qBittorrent"
-
-    # Gaming
-    "org.prismlauncher.PrismLauncher"
-    "sh.ppy.osu"
-
-    # GNOME Core Apps
-    "ca.desrt.dconf-editor"
-    "org.gnome.baobab"
-    "org.gnome.Calculator"
-    "org.gnome.Decibels"
-    "org.gnome.Evince"
-    "org.gnome.Loupe"
-    "org.gnome.Music"
-    "org.gnome.Snapshot"
-    "org.gnome.SimpleScan"
-    "org.gnome.TextEditor"
-    "org.gnome.Totem"
-
-    # Media
-    "com.spotify.Client"
-    "com.stremio.Stremio"
-
-    # Remote Access
-    "com.anydesk.Anydesk"
-    "com.parsecgaming.parsec"
-
-    # Studio
-    "com.obsproject.Studio"
-
-    # Security
-    "com.bitwarden.desktop"
-
-    # Utilities
-    "com.belmoussaoui.Decoder"
-  ];
 }
