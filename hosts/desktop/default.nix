@@ -1,37 +1,13 @@
-{ self, host, pkgs, ... }: {
+{ self, ... }: {
   imports = [
     ./hardware.nix
     ./mounts.nix
 
     (self + /modules/nix/default.nix)
-    (self + /modules/nix/system/appimage.nix)
-    (self + /modules/nix/system/corectrl.nix)
-    (self + /modules/nix/system/cups.nix)
-    (self + /modules/nix/system/dialout.nix)
-    (self + /modules/nix/system/docker.nix)
-    (self + /modules/nix/system/fail2ban.nix)
-    (self + /modules/nix/system/flatpak.nix)
-    (self + /modules/nix/system/gnome.nix)
-    (self + /modules/nix/system/libvirt.nix)
-    (self + /modules/nix/system/packet-tracer.nix)
-    (self + /modules/nix/system/podman.nix)
-    (self + /modules/nix/system/scrcpy.nix)
-    (self + /modules/nix/system/ssh.nix)
-    (self + /modules/nix/system/tailscale.nix)
-    (self + /modules/nix/system/wireshark.nix)
+    (self + /modules/nix/system/exclusive/desktop/corectrl.nix)
   ];
 
-  # State
-  system.stateVersion = host.stateVersion;
-
-  # Bootloader and Kernel
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Networking
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
   networking.networkmanager.ensureProfiles.profiles = {
     defaultProfile = {
       connection = {
@@ -52,17 +28,6 @@
         method = "auto";
       };
     };
-  };
-
-  # Users
-  users.users.${host.user.username} = {
-    isNormalUser = true;
-    description = host.user.name;
-    shell = pkgs.zsh;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
   };
 
   # Virtualisation
