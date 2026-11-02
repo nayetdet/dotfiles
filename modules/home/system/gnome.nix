@@ -118,6 +118,9 @@
     };
 
     "org/gnome/shell/extensions/tilingshell" = {
+      inner-gaps = 0;
+      outer-gaps = 0;
+      selected-layouts = [ [ "Layout 2" ] [ "Layout 2" ] ];
       show-indicator = false;
     };
   };
