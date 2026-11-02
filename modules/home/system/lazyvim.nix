@@ -10,6 +10,20 @@
       vim.o.autowrite = true
     '';
 
+    plugins.hidden-files = ''
+      return {
+        "folke/snacks.nvim",
+        opts = {
+          picker = {
+            sources = {
+              explorer = { hidden = true },
+              files = { hidden = true },
+            },
+          },
+        },
+      }
+    '';
+
     plugins.colorscheme = ''
       return {
         { "EdenEast/nightfox.nvim" },
