@@ -11,6 +11,7 @@
     (self + /modules/home/system/gnome.nix)
     (self + /modules/home/system/lazyvim.nix)
     (self + /modules/home/system/papirus.nix)
+    (self + /modules/home/system/vim.nix)
     (self + /modules/home/system/vscodium.nix)
     (self + /modules/home/system/zsh.nix)
   ];
@@ -134,6 +135,5 @@
     # Utilities
     "com.bitwarden.desktop"
     "com.belmoussaoui.Decoder"
-    "io.github.fabrialberio.pinapp"
   ];
 }

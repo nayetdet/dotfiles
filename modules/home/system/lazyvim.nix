@@ -1,6 +1,8 @@
 { inputs, pkgs, ... }: {
   imports = [ inputs.lazyvim.homeManagerModules.default ];
-  home.packages = [ pkgs.vim ];
+
+  xdg.dataFile."applications/nvim.desktop".text = "[Desktop Entry]\nHidden=true\n";
+
   programs.lazyvim = {
     enable = true;
     extraPackages = with pkgs; [
