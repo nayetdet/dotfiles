@@ -134,5 +134,6 @@
     # Utilities
     "com.bitwarden.desktop"
     "com.belmoussaoui.Decoder"
+    "io.github.fabrialberio.pinapp"
   ];
 }
