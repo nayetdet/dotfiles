@@ -13,6 +13,7 @@
     lock-keys-2
     quick-settings-audio-panel
     status-area-horizontal-spacing
+    tiling-shell
   ]);
 
   dconf.settings = {
@@ -69,6 +70,7 @@
         "lockkeys@vaina.lt"
         "quick-settings-audio-panel@rayzeq.github.io"
         "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
+        "tilingshell@ferrarodomenico.com"
       ];
     };
 
