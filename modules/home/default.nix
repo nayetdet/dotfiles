@@ -1,4 +1,4 @@
-{ self, pkgs, ...}: {
+{ self, host, pkgs, ...}: {
   imports = [
     (self + /modules/home/flatpak/discord.nix)
     (self + /modules/home/flatpak/firefox.nix)
@@ -15,7 +15,15 @@
     (self + /modules/home/system/zsh.nix)
   ];
 
+  # Nix
   nixpkgs.config.allowUnfree = true;
+
+  # Home
+  home.stateVersion = host.stateVersion;
+  home.username = host.user.username;
+  home.homeDirectory = "/home/${host.user.username}";
+
+  # System Packages
   home.packages = with pkgs; [
     # AI Development Tools
     codex
@@ -77,6 +85,7 @@
     util-linux
   ];
 
+  # Flatpak Packages
   services.flatpak.packages = [
     # Browsers
     "com.brave.Browser"
