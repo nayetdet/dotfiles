@@ -116,5 +116,9 @@
       mpris-controlers-are-moved = false;
       panel-type = "merged-panel";
     };
+
+    "org/gnome/shell/extensions/tilingshell" = {
+      show-indicator = false;
+    };
   };
 }
