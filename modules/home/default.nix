@@ -81,15 +81,14 @@
     # Browsers
     "com.brave.Browser"
 
-    # Development & Containers
+    # Development
     "com.ranfdev.DistroShelf"
     "com.getpostman.Postman"
     "com.mongodb.Compass"
     "com.redis.RedisInsight"
     "io.dbeaver.DBeaverCommunity"
 
-    # Documents & GNOME
-    "org.libreoffice.LibreOffice"
+    # GNOME Core Apps
     "ca.desrt.dconf-editor"
     "org.gnome.baobab"
     "org.gnome.Calculator"
@@ -102,13 +101,18 @@
     "org.gnome.TextEditor"
     "org.gnome.Totem"
 
-    # Media & Downloads
-    "com.spotify.Client"
-    "com.stremio.Stremio"
-    "com.obsproject.Studio"
+    # Documents
+    "org.libreoffice.LibreOffice"
+
+    # Downloading
     "com.vysp3r.ProtonPlus"
     "org.nickvision.tubeconverter"
     "org.qbittorrent.qBittorrent"
+
+    # Media
+    "com.spotify.Client"
+    "com.stremio.Stremio"
+    "com.obsproject.Studio"
 
     # Gaming
     "org.prismlauncher.PrismLauncher"
@@ -118,7 +122,7 @@
     "com.anydesk.Anydesk"
     "com.parsecgaming.parsec"
 
-    # Security & Utilities
+    # Utilities
     "com.bitwarden.desktop"
     "com.belmoussaoui.Decoder"
   ];
