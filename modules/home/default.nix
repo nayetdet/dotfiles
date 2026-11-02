@@ -93,7 +93,7 @@
 
     # Development
     "com.ranfdev.DistroShelf"
-    "com.getpostman.Postman"
+    "com.usebruno.Bruno"
     "com.mongodb.Compass"
     "com.redis.RedisInsight"
     "io.dbeaver.DBeaverCommunity"
