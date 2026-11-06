@@ -31,6 +31,7 @@
     github-copilot-cli
 
     # Development Tools
+    devcontainer
     git
     git-lfs
     gh
