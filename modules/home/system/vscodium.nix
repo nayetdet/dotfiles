@@ -13,20 +13,19 @@
     enable = true;
     package = pkgs.vscodium;
     profiles.default = {
-      extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
+      extensions = (with pkgs.nix-vscode-extensions.vscode-marketplace; [
         aaron-bond.better-comments
         bbenoist.nix
         emilast.logfilehighlighter
         waderyan.gitblame
         miguelsolorio.min-theme
         ms-azuretools.vscode-containers
-        ms-vscode-remote.remote-containers
-        ms-vscode-remote.remote-ssh
-        ms-vscode-remote.remote-ssh-edit
-        ms-vscode.remote-explorer
         repreng.csv
         thang-nm.flow-icons
-      ];
+      ]) ++ (with pkgs.nix-vscode-extensions.open-vsx; [
+        s-h-a-d-o-w.dev-containers-oss
+        jeanp413.open-remote-ssh
+      ]);
 
       userSettings = {
         "workbench.colorTheme" = "Min Dark";
