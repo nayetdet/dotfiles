@@ -4,6 +4,7 @@
     ./mounts.nix
 
     (self + /modules/nix/default.nix)
+    (self + /modules/nix/system/kinect.nix)
     (self + /modules/nix/system/exclusive/desktop/corectrl.nix)
   ];
 
