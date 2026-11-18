@@ -15,6 +15,7 @@
     (self + /modules/home/system/papirus.nix)
     (self + /modules/home/system/vim.nix)
     (self + /modules/home/system/vscodium.nix)
+    (self + /modules/home/system/yazi.nix)
     (self + /modules/home/system/zsh.nix)
   ];
 
