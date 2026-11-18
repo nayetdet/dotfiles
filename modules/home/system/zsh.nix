@@ -18,7 +18,7 @@ in {
       syntaxHighlighting.enable = true;
       shellAliases = aliases;
       history = {
-        path = "${config.home.homeDirectory}/.zsh_history";
+        path = "${config.xdg.configHome}/zsh/.zsh_history";
         size = 100000;
         save = 100000;
         append = true;
