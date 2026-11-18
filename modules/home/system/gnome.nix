@@ -13,7 +13,6 @@
     lock-keys-2
     quick-settings-audio-panel
     status-area-horizontal-spacing
-    tiling-shell
   ]);
 
   dconf.settings = {
@@ -70,7 +69,6 @@
         "lockkeys@vaina.lt"
         "quick-settings-audio-panel@rayzeq.github.io"
         "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
-        "tilingshell@ferrarodomenico.com"
       ];
     };
 
@@ -115,13 +113,6 @@
       move-output-volume-slider = false;
       mpris-controlers-are-moved = false;
       panel-type = "merged-panel";
-    };
-
-    "org/gnome/shell/extensions/tilingshell" = {
-      inner-gaps = 0;
-      outer-gaps = 0;
-      selected-layouts = [ [ "Layout 2" ] [ "Layout 2" ] ];
-      show-indicator = false;
     };
   };
 }
