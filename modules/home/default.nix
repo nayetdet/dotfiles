@@ -13,6 +13,7 @@
     (self + /modules/home/system/gnome.nix)
     (self + /modules/home/system/lazyvim.nix)
     (self + /modules/home/system/papirus.nix)
+    (self + /modules/home/system/scrcpy.nix)
     (self + /modules/home/system/vim.nix)
     (self + /modules/home/system/vscodium.nix)
     (self + /modules/home/system/yazi.nix)
