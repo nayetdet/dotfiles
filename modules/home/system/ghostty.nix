@@ -7,12 +7,12 @@
     };
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/default-applications/terminal" = {
-      exec = "ghostty";
-      exec-arg = "--";
-    };
+  xdg.terminal-exec = {
+    enable = true;
+    settings.GNOME = [ "com.mitchellh.ghostty.desktop" ];
+  };
 
+  dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
