@@ -17,6 +17,14 @@ in {
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = aliases;
+      history = {
+        path = "${config.home.homeDirectory}/.zsh_history";
+        size = 100000;
+        save = 100000;
+        append = true;
+        share = true;
+      };
+
       oh-my-zsh = {
         enable = true;
         theme = "gentoo";
@@ -26,11 +34,6 @@ in {
           "zoxide"
         ];
       };
-    };
-
-    programs.bash = {
-      enable = true;
-      shellAliases = aliases;
     };
   };
 }
