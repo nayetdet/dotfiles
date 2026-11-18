@@ -8,6 +8,11 @@
   };
 
   dconf.settings = {
+    "org/gnome/desktop/default-applications/terminal" = {
+      exec = "ghostty";
+      exec-arg = "--";
+    };
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
