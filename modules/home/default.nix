@@ -6,6 +6,7 @@
     (self + /modules/home/flatpak/sober.nix)
     (self + /modules/home/flatpak/steam.nix)
     (self + /modules/home/system/bash.nix)
+    (self + /modules/home/system/btop.nix)
     (self + /modules/home/system/direnv.nix)
     (self + /modules/home/system/flatpak.nix)
     (self + /modules/home/system/ghostty.nix)
