@@ -1,7 +1,8 @@
-# NixOS
+# NixOS Configuration
 
-My personal NixOS configuration and dotfiles, managed declaratively with Nix
-Flakes and Home Manager.
+Personal NixOS configurations for my desktop and laptop, managed declaratively
+with Nix Flakes and Home Manager. The repository also includes application
+settings and assets used by those systems.
 
 This repository contains the system configuration, host-specific settings,
 home-manager configuration, and desktop assets for my machines.
