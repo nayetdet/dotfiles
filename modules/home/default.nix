@@ -121,7 +121,6 @@
 
     # Downloading
     "com.vysp3r.ProtonPlus"
-    "org.nickvision.tubeconverter"
     "org.qbittorrent.qBittorrent"
 
     # Media
