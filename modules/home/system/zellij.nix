@@ -3,7 +3,7 @@
     pkgs.zellij
   ];
 
-  xdg.dataFile."applications/zellij.desktop".text = ''
+  xdg.dataFile."applications/dev.zellij.Zellij.desktop".text = ''
     [Desktop Entry]
     Hidden=true
   '';
