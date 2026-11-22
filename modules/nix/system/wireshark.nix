@@ -4,7 +4,5 @@
     package = pkgs.wireshark;
   };
 
-  users.users.${host.user.username}.extraGroups = [
-    "wireshark"
-  ];
+  users.users.${host.user.username}.extraGroups = [ "wireshark" ];
 }

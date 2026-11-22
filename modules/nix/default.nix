@@ -1,4 +1,10 @@
-{ self, host, pkgs, ... }: {
+{
+  self,
+  host,
+  pkgs,
+  ...
+}:
+{
   imports = [
     (self + /modules/nix/system/appimage.nix)
     (self + /modules/nix/system/cups.nix)

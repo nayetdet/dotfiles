@@ -4,7 +4,5 @@
     scrcpy
   ];
 
-  users.users.${host.user.username}.extraGroups = [
-    "adbusers"
-  ];
+  users.users.${host.user.username}.extraGroups = [ "adbusers" ];
 }

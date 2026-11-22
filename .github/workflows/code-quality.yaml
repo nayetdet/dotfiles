@@ -1,0 +1,25 @@
+name: Code Quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v32
+
+      - name: Run quality checks
+        run: nix shell nixpkgs#ripgrep nixpkgs#nixfmt-rfc-style --command make check

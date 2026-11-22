@@ -2,7 +2,7 @@
 let
   flameshotScreenshotsDirectory = "${config.home.homeDirectory}/Pictures/Screenshots";
   flameshotIniPath = "${config.home.homeDirectory}/.var/app/org.flameshot.Flameshot/config/flameshot/flameshot.ini";
-  flameshotIni = (pkgs.formats.ini {}).generate "flameshot.ini" {
+  flameshotIni = (pkgs.formats.ini { }).generate "flameshot.ini" {
     General = {
       contrastOpacity = 188;
       saveAfterCopy = true;
@@ -14,15 +14,10 @@ let
       TYPE_ACCEPT = "Ctrl+C";
     };
   };
-in {
-  services.flatpak.packages = [
-    "org.flameshot.Flameshot"
-  ];
-
-  home.packages = with pkgs; [
-    wl-clipboard
-  ];
-
+in
+{
+  home.packages = with pkgs; [ wl-clipboard ];
+  services.flatpak.packages = [ "org.flameshot.Flameshot" ];
   systemd.user.tmpfiles.rules = [
     "d ${flameshotScreenshotsDirectory} 0755 - - -"
     "C ${flameshotIniPath} - - - - ${flameshotIni}"

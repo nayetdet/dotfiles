@@ -1,4 +1,10 @@
-{ self, host, pkgs, ... }: {
+{
+  self,
+  host,
+  pkgs,
+  ...
+}:
+{
   services = {
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;

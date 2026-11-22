@@ -1,8 +1,5 @@
 { inputs, pkgs, ... }: {
-  nixpkgs.overlays = [
-    inputs.nix-vscode-extensions.overlays.default
-  ];
-
+  nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ];
   home.packages = [
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscodium}/bin/codium "$@"
@@ -13,19 +10,21 @@
     enable = true;
     package = pkgs.vscodium;
     profiles.default = {
-      extensions = (with pkgs.nix-vscode-extensions.vscode-marketplace; [
-        aaron-bond.better-comments
-        bbenoist.nix
-        emilast.logfilehighlighter
-        waderyan.gitblame
-        miguelsolorio.min-theme
-        ms-azuretools.vscode-containers
-        repreng.csv
-        thang-nm.flow-icons
-      ]) ++ (with pkgs.nix-vscode-extensions.open-vsx; [
-        s-h-a-d-o-w.dev-containers-oss
-        jeanp413.open-remote-ssh
-      ]);
+      extensions =
+        (with pkgs.nix-vscode-extensions.vscode-marketplace; [
+          aaron-bond.better-comments
+          bbenoist.nix
+          emilast.logfilehighlighter
+          waderyan.gitblame
+          miguelsolorio.min-theme
+          ms-azuretools.vscode-containers
+          repreng.csv
+          thang-nm.flow-icons
+        ])
+        ++ (with pkgs.nix-vscode-extensions.open-vsx; [
+          s-h-a-d-o-w.dev-containers-oss
+          jeanp413.open-remote-ssh
+        ]);
 
       userSettings = {
         "workbench.colorTheme" = "Min Dark";
@@ -38,7 +37,8 @@
           "gitDecoration.addedResourceForeground" = "#81b88b";
           "gitDecoration.untrackedResourceForeground" = "#81b88b";
         };
-        "editor.fontFamily" = "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace";
+        "editor.fontFamily" =
+          "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace";
         "files.autoSave" = "afterDelay";
         "[javascript]" = {
           "editor.tabSize" = 2;

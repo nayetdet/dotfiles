@@ -1,8 +1,5 @@
 { ... }: {
-  services.flatpak.packages = [
-    "com.discordapp.Discord"
-  ];
-
+  services.flatpak.packages = [ "com.discordapp.Discord" ];
   xdg.configFile."autostart/discord.desktop".text = ''
     [Desktop Entry]
     Type=Application

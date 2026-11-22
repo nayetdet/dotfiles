@@ -1,8 +1,18 @@
-{ host, config, lib, ... }:
+{
+  host,
+  config,
+  lib,
+  ...
+}:
 let
-  rootfullStoragePath = config.virtualisation.containers.storage.rootful.settings.storage.graphroot or null;
-  rootlessStoragePath = config.virtualisation.containers.storage.rootless.settings.storage.graphroot or null;
-in {
+  rootfullStoragePath =
+    config.virtualisation.containers.storage.rootful.settings.storage.graphroot
+      or null;
+  rootlessStoragePath =
+    config.virtualisation.containers.storage.rootless.settings.storage.graphroot
+      or null;
+in
+{
   virtualisation.podman = {
     enable = true;
     dockerCompat = false;
@@ -19,12 +29,15 @@ in {
     ]);
 
   systemd.services.podman.unitConfig.RequiresMountsFor =
-    lib.filter (path:
-      path != null
-      && path != "/var/lib/containers/storage"
-      && path != "/var/lib/containers/storage-rootless"
-    ) [
-      rootfullStoragePath
-      rootlessStoragePath
-    ];
+    lib.filter
+      (
+        path:
+        path != null
+        && path != "/var/lib/containers/storage"
+        && path != "/var/lib/containers/storage-rootless"
+      )
+      [
+        rootfullStoragePath
+        rootlessStoragePath
+      ];
 }

@@ -23,8 +23,10 @@ let
       ${setMinitelaBrightness}
     fi
   '';
-in {
-  environment.etc."systemd/system-sleep/minitela-brightness".source = setMinitelaBrightnessHook;
+in
+{
+  environment.etc."systemd/system-sleep/minitela-brightness".source =
+    setMinitelaBrightnessHook;
   systemd.services.minitela-brightness = {
     description = "Set Minitela brightness to zero";
     after = [ "basic.target" ];

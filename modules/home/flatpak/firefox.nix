@@ -1,8 +1,5 @@
 { ... }: {
-  services.flatpak.packages = [
-    "org.mozilla.firefox"
-  ];
-
+  services.flatpak.packages = [ "org.mozilla.firefox" ];
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {

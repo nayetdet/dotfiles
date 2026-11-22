@@ -1,5 +1,6 @@
 { self, ... }: {
-  home.file.".config/corectrl/profiles/_global_.ccpro".source = self + /config/corectrl/_global_.ccpro;
+  home.file.".config/corectrl/profiles/_global_.ccpro".source =
+    self + /config/corectrl/_global_.ccpro;
 
   xdg.configFile."autostart/corectrl.desktop".text = ''
     [Desktop Entry]

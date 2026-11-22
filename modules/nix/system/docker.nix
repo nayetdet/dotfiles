@@ -1,18 +1,21 @@
-{ host, config, lib, ... }:
+{
+  host,
+  config,
+  lib,
+  ...
+}:
 let
   storagePath = config.virtualisation.docker.daemon.settings."data-root" or null;
-in {
+in
+{
   virtualisation.docker.enable = true;
-
-  users.users.${host.user.username}.extraGroups = [
-    "docker"
-  ];
-
+  users.users.${host.user.username}.extraGroups = [ "docker" ];
   systemd.tmpfiles.rules = lib.optionals (storagePath != null) [
     "d ${storagePath} 0700 root root -"
     "z ${storagePath} 0700 root root -"
   ];
 
-  systemd.services.docker.unitConfig.RequiresMountsFor =
-    lib.mkIf (storagePath != null && storagePath != "/var/lib/docker") storagePath;
+  systemd.services.docker.unitConfig.RequiresMountsFor = lib.mkIf (
+    storagePath != null && storagePath != "/var/lib/docker"
+  ) storagePath;
 }

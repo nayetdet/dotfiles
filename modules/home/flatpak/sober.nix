@@ -1,8 +1,5 @@
 { ... }: {
-  services.flatpak.packages = [
-    "org.vinegarhq.Sober"
-  ];
-
+  services.flatpak.packages = [ "org.vinegarhq.Sober" ];
   services.flatpak.overrides = {
     "org.vinegarhq.Sober" = {
       Context = {

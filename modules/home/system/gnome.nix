@@ -1,19 +1,29 @@
-{ self, host, pkgs, lib, ... }: {
-  home.packages = with pkgs; [
-    libgda6
-    gsound
-  ] ++ (with pkgs.gnomeExtensions; [
-    appindicator
-    color-picker
-    copyous
-    dash-to-dock
-    desktop-icons-ng-ding
-    emoji-copy
-    free-space-indicator
-    lock-keys-2
-    quick-settings-audio-panel
-    status-area-horizontal-spacing
-  ]);
+{
+  self,
+  host,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  home.packages =
+    with pkgs;
+    [
+      libgda6
+      gsound
+    ]
+    ++ (with pkgs.gnomeExtensions; [
+      appindicator
+      color-picker
+      copyous
+      dash-to-dock
+      desktop-icons-ng-ding
+      emoji-copy
+      free-space-indicator
+      lock-keys-2
+      quick-settings-audio-panel
+      status-area-horizontal-spacing
+    ]);
 
   dconf.settings = {
     "org/gnome/desktop/background" = {

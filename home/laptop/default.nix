@@ -1,5 +1,1 @@
-{ self, ... }: {
-  imports = [
-    (self + /modules/home/default.nix)
-  ];
-}
+{ self, ... }: { imports = [ (self + /modules/home/default.nix) ]; }

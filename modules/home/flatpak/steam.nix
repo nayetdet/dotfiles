@@ -1,12 +1,7 @@
 { ... }: {
-  services.flatpak.packages = [
-    "com.valvesoftware.Steam"
-  ];
-
+  services.flatpak.packages = [ "com.valvesoftware.Steam" ];
   services.flatpak.overrides."com.valvesoftware.Steam" = {
-    Context.filesystems = [
-      "/run/media:rw"
-    ];
+    Context.filesystems = [ "/run/media:rw" ];
   };
 
   xdg.configFile."autostart/steam.desktop".text = ''

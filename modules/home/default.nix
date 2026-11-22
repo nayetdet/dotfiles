@@ -1,4 +1,10 @@
-{ self, host, pkgs, ...}: {
+{
+  self,
+  host,
+  pkgs,
+  ...
+}:
+{
   imports = [
     (self + /modules/home/flatpak/discord.nix)
     (self + /modules/home/flatpak/firefox.nix)
@@ -66,29 +72,31 @@
     nautilus
 
     # Utilities
-    p7zip
-    unzip
-    zip
-    jq
-    ethtool
-    pciutils
-    usbutils
     arp-scan
     dnsutils
-    iproute2
+    ethtool
+    file
     iperf3
+    iproute2
+    jq
+    lsof
     mtr
     net-tools
+    nixfmt-rfc-style
     nmap
+    p7zip
+    pciutils
+    procps
+    psmisc
+    ripgrep
     socat
     tcpdump
     traceroute
-    whois
-    file
-    lsof
-    psmisc
-    procps
+    unzip
+    usbutils
     util-linux
+    whois
+    zip
   ];
 
   # Flatpak Packages

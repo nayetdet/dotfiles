@@ -1,7 +1,5 @@
 { inputs, pkgs, ... }: {
-  imports = [
-    inputs.lazyvim.homeManagerModules.default
-  ];
+  imports = [ inputs.lazyvim.homeManagerModules.default ];
 
   xdg.dataFile."applications/nvim.desktop".text = ''
     [Desktop Entry]
