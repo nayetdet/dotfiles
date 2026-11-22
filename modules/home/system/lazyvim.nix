@@ -1,7 +1,12 @@
 { inputs, pkgs, ... }: {
-  imports = [ inputs.lazyvim.homeManagerModules.default ];
+  imports = [
+    inputs.lazyvim.homeManagerModules.default
+  ];
 
-  xdg.dataFile."applications/nvim.desktop".text = "[Desktop Entry]\nHidden=true\n";
+  xdg.dataFile."applications/nvim.desktop".text = ''
+    [Desktop Entry]
+    Hidden=true
+  '';
 
   programs.lazyvim = {
     enable = true;
@@ -15,7 +20,26 @@
       vim.opt.clipboard = "unnamedplus"
       vim.opt.number = true
       vim.opt.relativenumber = false
-      vim.o.autowriteall = true
+    '';
+
+    plugins.autosave = ''
+      return {
+        "okuuva/auto-save.nvim",
+        event = { "InsertLeave", "TextChanged" },
+        opts = {
+          debounce_delay = 1000,
+        },
+      }
+    '';
+
+    plugins.colorscheme = ''
+      return {
+        { "EdenEast/nightfox.nvim" },
+        {
+          "LazyVim/LazyVim",
+          opts = { colorscheme = "carbonfox" },
+        },
+      }
     '';
 
     plugins.hidden-files = ''
@@ -55,16 +79,6 @@
         config = function()
           require("pdfreader").setup()
         end,
-      }
-    '';
-
-    plugins.colorscheme = ''
-      return {
-        { "EdenEast/nightfox.nvim" },
-        {
-          "LazyVim/LazyVim",
-          opts = { colorscheme = "carbonfox" },
-        },
       }
     '';
   };
