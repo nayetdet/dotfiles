@@ -11,7 +11,7 @@
     (self + /modules/home/system/flatpak.nix)
     (self + /modules/home/system/ghostty.nix)
     (self + /modules/home/system/gnome.nix)
-    (self + /modules/home/system/lazyvim.nix)
+    (self + /modules/home/system/nvim.nix)
     (self + /modules/home/system/papirus.nix)
     (self + /modules/home/system/scrcpy.nix)
     (self + /modules/home/system/vim.nix)
