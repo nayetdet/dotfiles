@@ -17,6 +17,7 @@
     (self + /modules/home/system/vim.nix)
     (self + /modules/home/system/vscodium.nix)
     (self + /modules/home/system/yazi.nix)
+    (self + /modules/home/system/zellij.nix)
     (self + /modules/home/system/zsh.nix)
   ];
 
@@ -54,7 +55,6 @@
     fzf
     zoxide
     tmux
-    zellij
     tree
     ffmpeg
     yt-dlp
