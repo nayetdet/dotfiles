@@ -81,5 +81,12 @@
         end,
       }
     '';
+
+    plugins.trouble = ''
+      return {
+        "folke/trouble.nvim",
+        lazy = false,
+      }
+    '';
   };
 }
