@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -22,6 +23,10 @@ in
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = aliases;
+      initContent = ''
+        source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
+      '';
+
       history = {
         path = "${config.xdg.configHome}/zsh/.zsh_history";
         size = 100000;
