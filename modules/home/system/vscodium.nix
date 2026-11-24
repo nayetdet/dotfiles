@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   nixpkgs.overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+
   home.packages = [
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscodium}/bin/codium "$@"
