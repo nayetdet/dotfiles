@@ -7,6 +7,7 @@
 let
   installerPath =
     self + /config/packet-tracer/CiscoPacketTracer_901_Ubuntu_64bit.deb;
+
   installerExists =
     builtins.pathExists installerPath
     &&
