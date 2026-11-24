@@ -25,6 +25,9 @@ in
       shellAliases = aliases;
       initContent = ''
         source ${pkgs.zsh-nix-shell}/share/zsh-nix-shell/nix-shell.plugin.zsh
+        if [[ -n $IN_NIX_SHELL ]]; then
+          PROMPT=''${PROMPT//green/yellow}
+        fi
       '';
 
       history = {
