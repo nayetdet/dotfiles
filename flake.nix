@@ -29,6 +29,7 @@
       ...
     }@inputs:
     let
+      systems = nixpkgs.lib.unique (map (host: host.system) (builtins.attrValues hosts));
       hosts = nixpkgs.lib.mapAttrs mkHost {
         desktop = { };
         laptop = { };
@@ -74,19 +75,14 @@
         };
     in
     {
-      formatter = nixpkgs.lib.genAttrs (nixpkgs.lib.unique (
-        map (host: host.system) (builtins.attrValues hosts)
-      )) (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
-
-      checks =
-        nixpkgs.lib.genAttrs (nixpkgs.lib.unique (map (host: host.system) (builtins.attrValues hosts)))
-          (
-            system:
-            import ./checks.nix {
-              pkgs = nixpkgs.legacyPackages.${system};
-              src = self;
-            }
-          );
+      formatter = nixpkgs.lib.genAttrs systems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
+      checks = nixpkgs.lib.genAttrs systems (
+        system:
+        import ./checks.nix {
+          pkgs = nixpkgs.legacyPackages.${system};
+          src = self;
+        }
+      );
 
       nixosConfigurations = nixpkgs.lib.mapAttrs (_: mkConfiguration) hosts;
     };
