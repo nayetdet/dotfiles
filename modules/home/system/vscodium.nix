@@ -24,8 +24,8 @@
           waderyan.gitblame
         ])
         ++ (with pkgs.nix-vscode-extensions.open-vsx; [
-          ddorch.codium-devcontainer
           jeanp413.open-remote-ssh
+          zwhy2025.open-dev-container
         ]);
 
       userSettings = {
