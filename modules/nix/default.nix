@@ -52,6 +52,16 @@
   services.xserver.xkb.variant = "abnt2";
   time.timeZone = "America/Fortaleza";
 
+  # Root
+  security = {
+    sudo.enable = false;
+    sudo-rs = {
+      enable = true;
+      execWheelOnly = true;
+      wheelNeedsPassword = true;
+    };
+  };
+
   # Users
   users.users.${host.user.username} = {
     isNormalUser = true;
