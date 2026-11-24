@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   aliases = lib.optionalAttrs config.zsh.aliases.enable {
     ghccm = "gh copilot -- -p 'Read the staged diff and write a specific English commit message in Conventional Commits format (type(scope): summary). Output only the message.' -s --allow-tool='shell(git:*)'";
@@ -12,6 +17,7 @@ in
   };
 
   config = {
+    home.sessionVariables.NIX_BUILD_SHELL = "${pkgs.zsh}/bin/zsh";
     programs.zsh = {
       enable = true;
       enableCompletion = true;
