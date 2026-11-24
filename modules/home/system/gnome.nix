@@ -36,6 +36,10 @@ in
       show-weekdate = true;
     };
 
+    "org/gnome/desktop/datetime" = {
+      automatic-timezone = true;
+    };
+
     "org/gnome/desktop/interface" = {
       accent-color = host.theme.theme;
       clock-format = "24h";
