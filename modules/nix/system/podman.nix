@@ -8,6 +8,7 @@ let
   rootfullStoragePath =
     config.virtualisation.containers.storage.rootful.settings.storage.graphroot
       or null;
+
   rootlessStoragePath =
     config.virtualisation.containers.storage.rootless.settings.storage.graphroot
       or null;
