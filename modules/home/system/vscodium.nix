@@ -8,10 +8,6 @@
     '')
   ];
 
-  xdg.configFile."VSCodium/argv.json".text = builtins.toJSON {
-    "enable-proposed-api" = [ "s-h-a-d-o-w.dev-containers-oss" ];
-  };
-
   programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
@@ -29,7 +25,6 @@
         ])
         ++ (with pkgs.nix-vscode-extensions.open-vsx; [
           nifty.nifty-devcontainer
-          s-h-a-d-o-w.dev-containers-oss
           jeanp413.open-remote-ssh
         ]);
 
