@@ -1,7 +1,4 @@
-.PHONY: install-hooks format check
-
-install-hooks:
-	git config core.hooksPath .githooks
+.PHONY: format check
 
 format:
 	nix fmt

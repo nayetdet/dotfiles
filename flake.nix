@@ -1,5 +1,6 @@
 {
   description = "Nayetdet's Flake";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
@@ -19,6 +20,10 @@
       url = "github:pfassina/lazyvim-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -26,6 +31,7 @@
       self,
       nixpkgs,
       home-manager,
+      git-hooks,
       ...
     }@inputs:
     let
@@ -76,14 +82,27 @@
         };
     in
     {
-      formatter = nixpkgs.lib.genAttrs systems (system: (mkPkgs system).nixfmt-tree);
-      checks = nixpkgs.lib.genAttrs systems (
+      formatter = nixpkgs.lib.genAttrs systems (
         system:
-        import ./checks.nix {
+        let
           pkgs = mkPkgs system;
-          src = self;
-        }
+        in
+        pkgs.nixfmt-tree
       );
+
+      checks = nixpkgs.lib.genAttrs systems (system: {
+        pre-commit-check = git-hooks.lib.${system}.run {
+          src = self;
+          hooks = {
+            deadnix = {
+              enable = true;
+              args = [ "--no-lambda-pattern-names" ];
+            };
+            nixfmt.enable = true;
+            statix.enable = true;
+          };
+        };
+      });
 
       nixosConfigurations = nixpkgs.lib.mapAttrs (_: mkConfiguration) hosts;
     };
