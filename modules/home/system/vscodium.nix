@@ -28,6 +28,7 @@
           thang-nm.flow-icons
         ])
         ++ (with pkgs.nix-vscode-extensions.open-vsx; [
+          nifty.nifty-devcontainer
           s-h-a-d-o-w.dev-containers-oss
           jeanp413.open-remote-ssh
         ]);
