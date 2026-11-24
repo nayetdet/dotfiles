@@ -70,7 +70,6 @@
     gnome-disk-utility
     gnome-system-monitor
     gnome-tweaks
-    nautilus
 
     # Utilities
     arp-scan

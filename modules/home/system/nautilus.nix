@@ -5,6 +5,7 @@
     ])
     ++ (with pkgs.python3Packages; [ pycairo ])
     ++ (with pkgs; [
+      nautilus
       nautilus-open-any-terminal
       nautilus-python
     ]);
