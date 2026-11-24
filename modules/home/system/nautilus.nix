@@ -15,11 +15,14 @@
     PYTHONPATH=${pkgs.python3Packages.pycairo}/${pkgs.python3.sitePackages}
   '';
 
-  dconf.settings."com/github/stunkymonkey/nautilus-open-any-terminal" = {
-    terminal = "ghostty";
-  };
+  dconf.settings = {
+    "com/github/stunkymonkey/nautilus-open-any-terminal" = {
+      terminal = "ghostty";
+    };
 
-  dconf.settings."io/github/yannmasoch/nautilus-my-computer" = {
-    start-on-disks = false;
+    "io/github/yannmasoch/nautilus-my-computer" = {
+      start-on-disks = false;
+      visibility-preferred-folders = "hidden";
+    };
   };
 }
