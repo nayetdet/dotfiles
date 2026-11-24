@@ -85,6 +85,7 @@
       clipboard-history = "keep-all";
       clipboard-position-vertical = "bottom";
       history-length = 150;
+      indicator-display = "hidden";
       item-height = 250;
       open-clipboard-dialog-shortcut = [ "<Super>V" ];
       toggle-incognito-mode-shortcut = [ ];
