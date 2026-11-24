@@ -35,6 +35,7 @@
         laptop = { };
       };
 
+      mkPkgs = system: nixpkgs.legacyPackages.${system};
       mkHost =
         id: overrides:
         nixpkgs.lib.recursiveUpdate {
@@ -75,11 +76,11 @@
         };
     in
     {
-      formatter = nixpkgs.lib.genAttrs systems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
+      formatter = nixpkgs.lib.genAttrs systems (system: (mkPkgs system).nixfmt-tree);
       checks = nixpkgs.lib.genAttrs systems (
         system:
         import ./checks.nix {
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = mkPkgs system;
           src = self;
         }
       );
