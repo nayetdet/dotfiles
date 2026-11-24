@@ -52,7 +52,7 @@
       mkConfiguration =
         host:
         nixpkgs.lib.nixosSystem {
-          system = host.system;
+          inherit (host) system;
           specialArgs = { inherit self inputs host; };
           modules = [
             (self + /hosts/${host.id}/default.nix)

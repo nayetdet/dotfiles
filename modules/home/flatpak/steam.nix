@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   services.flatpak.packages = [ "com.valvesoftware.Steam" ];
   services.flatpak.overrides."com.valvesoftware.Steam" = {
     Context.filesystems = [ "/run/media:rw" ];

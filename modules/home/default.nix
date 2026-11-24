@@ -71,6 +71,11 @@
     gnome-system-monitor
     gnome-tweaks
 
+    # Nix
+    deadnix
+    nixfmt
+    statix
+
     # Utilities
     arp-scan
     dnsutils
@@ -82,7 +87,6 @@
     lsof
     mtr
     net-tools
-    nixfmt
     nmap
     p7zip
     pciutils

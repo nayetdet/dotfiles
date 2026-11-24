@@ -8,4 +8,6 @@ format:
 
 check:
 	rg --files -g '*.nix' -0 | xargs -0 -r nixfmt --strict --width 80 --check
+	statix check
+	deadnix --no-lambda-pattern-names --fail
 	nix flake check
