@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -17,7 +16,6 @@ in
   };
 
   config = {
-    home.sessionVariables.NIX_BUILD_SHELL = "${pkgs.zsh}/bin/zsh";
     programs.zsh = {
       enable = true;
       enableCompletion = true;
