@@ -146,5 +146,6 @@
     # Utilities
     "com.bitwarden.desktop"
     "com.belmoussaoui.Decoder"
+    "net.codelogistics.clicker"
   ];
 }
