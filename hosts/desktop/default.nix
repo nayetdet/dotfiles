@@ -36,11 +36,11 @@
     docker.daemon.settings.data-root = "/run/media/HDD/.docker";
     containers.storage = {
       settings.storage.driver = "overlay";
+      rootless.settings.storage.graphroot = "/run/media/HDD/.podman";
       rootful.settings.storage = {
         graphroot = "/run/media/HDD/.podman-root";
         runroot = "/run/containers/storage";
       };
-      rootless.settings.storage.graphroot = "/run/media/HDD/.podman";
     };
   };
 }
