@@ -1,6 +1,8 @@
 { inputs, pkgs, ... }: {
   home.packages =
-    (with inputs; [ nautilus-my-computer.packages.${pkgs.system}.default ])
+    (with inputs; [
+      nautilus-my-computer.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ])
     ++ (with pkgs; [
       nautilus-open-any-terminal
       nautilus-python

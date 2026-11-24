@@ -83,7 +83,7 @@
     lsof
     mtr
     net-tools
-    nixfmt-rfc-style
+    nixfmt
     nmap
     p7zip
     pciutils
