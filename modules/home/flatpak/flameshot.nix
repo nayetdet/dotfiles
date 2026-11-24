@@ -45,10 +45,6 @@ in
   };
 
   dconf.settings = {
-    "org/gnome/shell/keybindings" = {
-      show-screenshot-ui = [ ];
-    };
-
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
@@ -59,6 +55,10 @@ in
       binding = "Print";
       command = ''${pkgs.bash}/bin/bash -c "QT_QPA_PLATFORM=wayland ${pkgs.flatpak}/bin/flatpak run --command=flameshot org.flameshot.Flameshot gui -p "${flameshotScreenshotsDirectory}" -r | ${pkgs.wl-clipboard}/bin/wl-copy"'';
       name = "Flameshot";
+    };
+
+    "org/gnome/shell/keybindings" = {
+      show-screenshot-ui = [ ];
     };
   };
 }

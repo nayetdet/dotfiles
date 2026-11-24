@@ -5,13 +5,15 @@
   lib,
   ...
 }:
+let
+  wallpaper = "file://${self}/assets/wallpaper.png";
+in
 {
   home.packages =
-    with pkgs;
-    [
+    (with pkgs; [
       libgda6
       gsound
-    ]
+    ])
     ++ (with pkgs.gnomeExtensions; [
       appindicator
       color-picker
@@ -26,39 +28,34 @@
 
   dconf.settings = {
     "org/gnome/desktop/background" = {
-      picture-uri = "file://${self}/assets/wallpaper.png";
-      picture-uri-dark = "file://${self}/assets/wallpaper.png";
+      picture-uri = wallpaper;
+      picture-uri-dark = wallpaper;
       picture-options = "zoom";
-    };
-
-    "org/gnome/desktop/screensaver" = {
-      picture-uri = "file://${self}/assets/wallpaper.png";
-      picture-options = "zoom";
-    };
-
-    "org/gnome/desktop/interface" = {
-      accent-color = host.theme.theme;
-      color-scheme = "prefer-dark";
-      icon-theme = host.theme.iconTheme;
-      enable-hot-corners = false;
-
-      clock-format = "24h";
-      clock-show-weekday = true;
-      clock-show-date = true;
-      clock-show-seconds = true;
-      clock-show-weekdate = true;
     };
 
     "org/gnome/desktop/calendar" = {
       show-weekdate = true;
     };
 
-    "org/gnome/desktop/wm/keybindings" = {
-      show-desktop = [ "<Super>d" ];
+    "org/gnome/desktop/interface" = {
+      accent-color = host.theme.theme;
+      clock-format = "24h";
+      clock-show-date = true;
+      clock-show-seconds = true;
+      clock-show-weekday = true;
+      clock-show-weekdate = true;
+      color-scheme = "prefer-dark";
+      enable-hot-corners = false;
+      icon-theme = host.theme.iconTheme;
     };
 
-    "org/gnome/shell/keybindings" = {
-      toggle-message-tray = [ ];
+    "org/gnome/desktop/screensaver" = {
+      picture-uri = wallpaper;
+      picture-options = "zoom";
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      show-desktop = [ "<Super>d" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -81,9 +78,9 @@
     };
 
     "org/gnome/shell/extensions/copyous" = {
-      database-backend = "json";
       clipboard-history = "keep-all";
       clipboard-position-vertical = "bottom";
+      database-backend = "json";
       history-length = 150;
       indicator-display = "hidden";
       item-height = 250;
@@ -114,10 +111,14 @@
       create-mpris-controllers = false;
       create-profile-switcher = true;
       group-applications-volume-sliders = true;
+      mpris-controlers-are-moved = false;
       move-input-volume-slider = false;
       move-output-volume-slider = false;
-      mpris-controlers-are-moved = false;
       panel-type = "merged-panel";
+    };
+
+    "org/gnome/shell/keybindings" = {
+      toggle-message-tray = [ ];
     };
   };
 }
