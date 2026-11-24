@@ -14,6 +14,7 @@
     (self + /modules/nix/system/flatpak.nix)
     (self + /modules/nix/system/gnome.nix)
     (self + /modules/nix/system/libvirt.nix)
+    (self + /modules/nix/system/nautilus.nix)
     (self + /modules/nix/system/packet-tracer.nix)
     (self + /modules/nix/system/podman.nix)
     (self + /modules/nix/system/scrcpy.nix)

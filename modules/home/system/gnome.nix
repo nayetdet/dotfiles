@@ -19,7 +19,6 @@
       dash-to-dock
       desktop-icons-ng-ding
       emoji-copy
-      free-space-indicator
       lock-keys-2
       quick-settings-audio-panel
       status-area-horizontal-spacing
@@ -75,7 +74,6 @@
         "dash-to-dock@micxgx.gmail.com"
         "ding@rastersoft.com"
         "emoji-copy@felipeftn"
-        "freespace@inbalboa.github.io"
         "lockkeys@vaina.lt"
         "quick-settings-audio-panel@rayzeq.github.io"
         "status-area-horizontal-spacing@mathematical.coffee.gmail.com"
@@ -108,10 +106,6 @@
 
     "org/gnome/shell/extensions/emoji-copy" = {
       always-show = false;
-    };
-
-    "org/gnome/shell/extensions/freespace" = {
-      indicator-display-mode = "icon";
     };
 
     "org/gnome/shell/extensions/quick-settings-audio-panel" = {
