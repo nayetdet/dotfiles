@@ -11,6 +11,10 @@
   programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
+    argvSettings = {
+      "enable-proposed-api" = [ "s-h-a-d-o-w.dev-containers-oss" ];
+    };
+
     profiles.default = {
       extensions =
         (with pkgs.nix-vscode-extensions.vscode-marketplace; [
@@ -25,6 +29,8 @@
         ])
         ++ (with pkgs.nix-vscode-extensions.open-vsx; [
           jeanp413.open-remote-ssh
+          s-h-a-d-o-w.dev-containers-oss
+          s-h-a-d-o-w.devcontainer-open-containing-folder
         ]);
 
       userSettings = {
