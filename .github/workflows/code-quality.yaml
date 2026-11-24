@@ -22,4 +22,4 @@ jobs:
         uses: cachix/install-nix-action@v32
 
       - name: Run quality checks
-        run: nix shell nixpkgs#ripgrep nixpkgs#nixfmt-rfc-style --command make check
+        run: nix shell nixpkgs#ripgrep nixpkgs#nixfmt --command make check
