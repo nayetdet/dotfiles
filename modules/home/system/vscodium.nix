@@ -8,6 +8,10 @@
     '')
   ];
 
+  xdg.configFile."VSCodium/argv.json".text = builtins.toJSON {
+    "enable-proposed-api" = [ "s-h-a-d-o-w.dev-containers-oss" ];
+  };
+
   programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
