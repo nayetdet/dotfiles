@@ -37,8 +37,7 @@
           "gitDecoration.addedResourceForeground" = "#81b88b";
           "gitDecoration.untrackedResourceForeground" = "#81b88b";
         };
-        "editor.fontFamily" =
-          "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace";
+        "editor.fontFamily" = "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', monospace";
         "files.autoSave" = "afterDelay";
         "[javascript]" = {
           "editor.tabSize" = 2;

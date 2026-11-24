@@ -71,11 +71,6 @@
     gnome-system-monitor
     gnome-tweaks
 
-    # Nix
-    deadnix
-    nixfmt
-    statix
-
     # Utilities
     arp-scan
     dnsutils

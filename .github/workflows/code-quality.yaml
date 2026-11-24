@@ -14,12 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-          persist-credentials: false
 
       - name: Install Nix
         uses: cachix/install-nix-action@v32
 
       - name: Run quality checks
-        run: nix shell nixpkgs#deadnix nixpkgs#nixfmt nixpkgs#ripgrep nixpkgs#statix --command make check
+        run: make check
