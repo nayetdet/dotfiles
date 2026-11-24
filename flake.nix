@@ -29,13 +29,15 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      hosts = nixpkgs.lib.mapAttrs mkHost {
+        desktop = { };
+        laptop = { };
+      };
 
       mkHost =
         id: overrides:
         nixpkgs.lib.recursiveUpdate {
-          inherit system;
+          system = "x86_64-linux";
           stateVersion = "26.05";
           user = {
             username = "nayetdet";
@@ -72,15 +74,20 @@
         };
     in
     {
-      formatter.${system} = pkgs.nixfmt-tree;
-      checks.${system} = import ./checks.nix {
-        inherit pkgs;
-        src = self;
-      };
+      formatter = nixpkgs.lib.genAttrs (nixpkgs.lib.unique (
+        map (host: host.system) (builtins.attrValues hosts)
+      )) (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
-      nixosConfigurations = nixpkgs.lib.mapAttrs (id: overrides: mkConfiguration (mkHost id overrides)) {
-        desktop = { };
-        laptop = { };
-      };
+      checks =
+        nixpkgs.lib.genAttrs (nixpkgs.lib.unique (map (host: host.system) (builtins.attrValues hosts)))
+          (
+            system:
+            import ./checks.nix {
+              pkgs = nixpkgs.legacyPackages.${system};
+              src = self;
+            }
+          );
+
+      nixosConfigurations = nixpkgs.lib.mapAttrs (_: mkConfiguration) hosts;
     };
 }
