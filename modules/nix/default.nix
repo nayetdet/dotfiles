@@ -18,6 +18,7 @@
     (self + /modules/nix/system/podman.nix)
     (self + /modules/nix/system/scrcpy.nix)
     (self + /modules/nix/system/ssh.nix)
+    (self + /modules/nix/system/sudo.nix)
     (self + /modules/nix/system/tailscale.nix)
     (self + /modules/nix/system/wireshark.nix)
   ];
@@ -52,17 +53,6 @@
   services.xserver.xkb.variant = "abnt2";
   time.timeZone = "America/Fortaleza";
 
-  # Root
-  security = {
-    sudo.enable = false;
-    sudo-rs = {
-      enable = true;
-      execWheelOnly = true;
-      extraConfig = "Defaults !pwfeedback";
-      wheelNeedsPassword = true;
-    };
-  };
-
   # Users
   users.users.${host.user.username} = {
     isNormalUser = true;
@@ -70,7 +60,6 @@
     shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
-      "wheel"
     ];
   };
 
